@@ -1,0 +1,2863 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#05060f" />
+<title>Future Skills – مهارات المستقبل | كورسات • برمجة • جرافيك • تسويق • مجالات مهنية</title>
+<meta name="description" content="Future Skills – مهارات المستقبل — استوديو رقمي متكامل: تصميم وتطوير مواقع، جرافيك ديزاين، تسويق إلكتروني، و12 مجال مهني بتخرّجك شغّال." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   Future Skills — DESIGN SYSTEM v3.0 (ULTRA GLASS NEON EDITION)
+   01) التوكنز (ألوان أقوى / زجاج مطور)
+   02) ريسيت + أساسيات
+   03) خلفية الأورورا المطور
+   04) Layout
+   05) الزجاج .glass
+   06) الأزرار
+   07) الشارات
+   08) النافبار
+   09) الهيرو
+   10) الماركي
+   11) الإحصائيات
+   12) الكروت
+   13) بروفايل المهندس
+   14) الخطوات
+   15) التقييمات
+   16) الأسئلة الشائعة
+   17) شريط CTA
+   18) التواصل + الفورم
+   19) الفوتر
+   20) عناصر عائمة
+   21) ظهور + صفحات
+   22) المجالات المهنية (جديد)
+   23) ريسبونسيف
+   24) تقليل الحركة
+   ========================================================================== */
+
+/* ---------- 01) التوكنز المطور ---------- */
+:root{
+  --ink:#f2f5ff;
+  --ink-soft:#c0cbee;
+  --muted:#8b9ac2;
+  --bg:#04050e;
+  --bg-2:#070b1d;
+
+  --c1:#8b5cff;   /* بنفسجي نيون */
+  --c2:#00e5ff;   /* سماوي نيون */
+  --c3:#ff2e88;   /* ماجنتا نيون */
+  --c4:#ffc247;   /* دهبي */
+  --c5:#00ff9d;   /* أخضر نيون */
+  --ok:#2ee6a8;
+
+  --grad-1:linear-gradient(135deg,#8b5cff 0%,#ff2e88 50%,#ffc247 110%);
+  --grad-2:linear-gradient(135deg,#00e5ff,#8b5cff);
+  --grad-3:linear-gradient(135deg,#ff2e88,#8b5cff);
+  --grad-4:linear-gradient(135deg,#ffd76a,#ff8a1b);
+  --grad-5:linear-gradient(135deg,#00ff9d,#00e5ff);
+
+  /* زجاج مطور — أقوى وألمع */
+  --glass-bg:linear-gradient(155deg,rgba(255,255,255,.13),rgba(255,255,255,.035) 60%,rgba(139,92,255,.06));
+  --glass-bg-strong:linear-gradient(155deg,rgba(255,255,255,.2),rgba(255,255,255,.06) 55%,rgba(139,92,255,.1));
+  --glass-stroke:rgba(255,255,255,.18);
+  --glass-stroke-strong:rgba(255,255,255,.35);
+  --blur:24px;
+
+  --r-sm:14px;
+  --r:22px;
+  --r-lg:30px;
+  --maxw:1200px;
+  --gap:clamp(16px,2.4vw,26px);
+
+  --shadow-glass:0 26px 60px -24px rgba(2,4,14,.92), inset 0 1px 0 rgba(255,255,255,.22);
+  --shadow-lift:0 44px 90px -30px rgba(139,92,255,.75), 0 0 0 1px rgba(255,255,255,.22), 0 0 46px -18px rgba(0,229,255,.35);
+  --shadow-deep:0 60px 120px -50px rgba(0,0,0,1);
+
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+}
+
+/* ---------- 02) ريسيت ---------- */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Cairo',system-ui,-apple-system,"Segoe UI",sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.8;
+  min-height:100vh;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+ul{list-style:none}
+::selection{background:rgba(139,92,255,.5);color:#fff}
+:focus-visible{outline:2px solid var(--c2);outline-offset:3px;border-radius:8px}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:#06091a}
+::-webkit-scrollbar-thumb{
+  background:linear-gradient(180deg,#8b5cff,#00e5ff,#ff2e88);
+  border-radius:20px;border:2px solid #06091a;
+}
+
+/* ---------- 03) الأورورا المطور ---------- */
+.aurora{
+  position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none;
+  background:
+    radial-gradient(120% 90% at 85% -10%, rgba(139,92,255,.35), transparent 60%),
+    radial-gradient(100% 80% at 5% 10%, rgba(0,229,255,.2), transparent 55%),
+    radial-gradient(90% 70% at 50% 110%, rgba(255,46,136,.26), transparent 60%),
+    linear-gradient(180deg,#04050e 0%,#070b1d 45%,#04050e 100%);
+}
+.aurora i{
+  position:absolute;border-radius:50%;
+  filter:blur(95px);opacity:.6;display:block;
+  animation:drift 26s var(--ease) infinite alternate;
+  will-change:transform;
+}
+.aurora i:nth-child(1){width:560px;height:560px;background:var(--c1);top:-160px;right:-80px}
+.aurora i:nth-child(2){width:460px;height:460px;background:var(--c3);bottom:-140px;left:-100px;animation-delay:-8s}
+.aurora i:nth-child(3){width:400px;height:400px;background:var(--c2);top:38%;left:52%;opacity:.4;animation-delay:-14s}
+.aurora i:nth-child(4){width:320px;height:320px;background:var(--c4);bottom:12%;right:18%;opacity:.24;animation-delay:-20s}
+@keyframes drift{
+  0%{transform:translate3d(0,0,0) scale(1)}
+  100%{transform:translate3d(-60px,50px,0) scale(1.18)}
+}
+.aurora::after{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(circle at 50% 30%, #000 10%, transparent 78%);
+  -webkit-mask-image:radial-gradient(circle at 50% 30%, #000 10%, transparent 78%);
+  opacity:.75;
+}
+
+/* ---------- 04) Layout ---------- */
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(16px,4vw,28px)}
+.sec{position:relative;padding-block:clamp(56px,8vw,110px)}
+.sec-tight{padding-block:clamp(36px,5vw,64px)}
+.sec-head{max-width:740px;margin:0 auto clamp(34px,5vw,58px);text-align:center}
+.sec-head h2{font-size:clamp(1.6rem,3.6vw,2.6rem);font-weight:900;line-height:1.4;letter-spacing:-.6px}
+.sec-head p{color:var(--muted);margin-top:14px;font-size:clamp(.95rem,1.5vw,1.06rem)}
+.grid{display:grid;gap:var(--gap)}
+.g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(292px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(208px,1fr))}
+.grad-text{
+  background:var(--grad-1);background-size:220% 220%;
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  animation:pan 10s linear infinite;
+}
+@keyframes pan{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+
+/* ---------- 05) الزجاج المطور ---------- */
+.glass,[data-glass]{
+  position:relative;
+  background:var(--glass-bg);
+  backdrop-filter:blur(var(--blur)) saturate(180%);
+  -webkit-backdrop-filter:blur(var(--blur)) saturate(180%);
+  border:1px solid var(--glass-stroke);
+  border-radius:var(--r);
+  box-shadow:var(--shadow-glass);
+  isolation:isolate;
+}
+.glass::before,[data-glass]::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;
+  background:linear-gradient(140deg,
+    rgba(255,255,255,.75),
+    rgba(0,229,255,.35) 30%,
+    rgba(255,255,255,0) 55%,
+    rgba(255,46,136,0) 70%,
+    rgba(139,92,255,.65));
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  pointer-events:none;z-index:-1;opacity:1;
+}
+.glass-strong{background:var(--glass-bg-strong);border-color:var(--glass-stroke-strong)}
+.glass-soft{background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.015))}
+.lift,.glass-i{
+  transition:transform .5s var(--ease),box-shadow .5s var(--ease),
+    border-color .4s var(--ease),background .4s var(--ease);
+}
+.lift:hover,.glass-i:hover{
+  transform:translateY(-8px);
+  box-shadow:var(--shadow-lift);
+  border-color:rgba(255,255,255,.4);
+}
+.press:active{transform:scale(.975)}
+
+/* ---------- 06) الأزرار المطور ---------- */
+.btn{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;
+  gap:10px;padding:15px 30px;border-radius:16px;
+  border:1px solid var(--glass-stroke-strong);
+  background:var(--glass-bg-strong);
+  backdrop-filter:blur(16px) saturate(180%);
+  -webkit-backdrop-filter:blur(16px) saturate(180%);
+  color:var(--ink);font-weight:800;font-size:1rem;line-height:1.2;
+  overflow:hidden;isolation:isolate;white-space:nowrap;
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease),background .4s var(--ease),border-color .4s var(--ease);
+  box-shadow:0 14px 34px -16px rgba(0,0,0,.95), inset 0 1px 0 rgba(255,255,255,.28);
+}
+.btn::after{
+  content:"";position:absolute;inset:-2px;
+  background:linear-gradient(115deg,transparent 25%,rgba(255,255,255,.6) 48%,transparent 72%);
+  transform:translateX(-130%);transition:transform .8s var(--ease);
+  pointer-events:none;z-index:-1;
+}
+.btn:hover::after{transform:translateX(130%)}
+.btn:hover{transform:translateY(-3px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn-p{
+  color:#fff;background:var(--grad-1);background-size:200% 200%;
+  border-color:rgba(255,255,255,.45);
+  box-shadow:0 20px 48px -18px rgba(255,46,136,.9),0 8px 24px -12px rgba(139,92,255,.95),inset 0 1px 0 rgba(255,255,255,.5);
+}
+.btn-p:hover{background-position:100% 50%;box-shadow:0 30px 66px -20px rgba(139,92,255,1),0 0 50px -12px rgba(255,46,136,.6),inset 0 1px 0 rgba(255,255,255,.6)}
+.btn-c{
+  color:#001a20;background:var(--grad-2);border-color:rgba(255,255,255,.45);
+  box-shadow:0 20px 48px -18px rgba(0,229,255,.85),inset 0 1px 0 rgba(255,255,255,.55);
+}
+.btn-a{
+  color:#2a1a00;background:var(--grad-4);border-color:rgba(255,255,255,.5);
+  box-shadow:0 20px 48px -18px rgba(255,138,27,.75),inset 0 1px 0 rgba(255,255,255,.6);
+}
+.btn-g{background:linear-gradient(160deg,rgba(255,255,255,.15),rgba(255,255,255,.04));color:var(--ink)}
+.btn-g:hover{background:linear-gradient(160deg,rgba(255,255,255,.24),rgba(255,255,255,.07))}
+.btn-sm{padding:11px 20px;font-size:.88rem;border-radius:13px}
+.btn-block{width:100%}
+.icon-btn{
+  width:46px;height:46px;display:grid;place-items:center;border-radius:14px;
+  border:1px solid var(--glass-stroke);background:var(--glass-bg-strong);
+  backdrop-filter:blur(16px) saturate(180%);-webkit-backdrop-filter:blur(16px) saturate(180%);
+  transition:.35s var(--ease);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 12px 26px -16px rgba(0,0,0,.95);
+}
+.icon-btn:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.4);box-shadow:0 0 0 4px rgba(139,92,255,.2),inset 0 1px 0 rgba(255,255,255,.4)}
+
+/* ---------- 07) الشارات ---------- */
+.pill{
+  display:inline-flex;align-items:center;gap:9px;padding:8px 18px;border-radius:999px;
+  background:rgba(255,255,255,.08);border:1px solid var(--glass-stroke);
+  backdrop-filter:blur(14px) saturate(170%);-webkit-backdrop-filter:blur(14px) saturate(170%);
+  font-size:.83rem;font-weight:800;color:var(--ink-soft);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 10px 26px -18px rgba(0,0,0,.9);
+}
+.pill .dot{
+  width:8px;height:8px;border-radius:50%;background:var(--c5);
+  box-shadow:0 0 0 4px rgba(0,255,157,.18),0 0 12px rgba(0,255,157,.8);
+  animation:blink 2.4s ease-in-out infinite;
+}
+@keyframes blink{50%{opacity:.35}}
+.tag{
+  display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:999px;
+  font-size:.74rem;font-weight:900;border:1px solid transparent;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+}
+.tag-v{background:rgba(139,92,255,.2);border-color:rgba(139,92,255,.5);color:#d3c6ff}
+.tag-c{background:rgba(0,229,255,.17);border-color:rgba(0,229,255,.45);color:#a8f2ff}
+.tag-p{background:rgba(255,46,136,.18);border-color:rgba(255,46,136,.48);color:#ffb9d5}
+.tag-g{background:rgba(255,194,71,.16);border-color:rgba(255,194,71,.46);color:#ffe3a6}
+.tag-ok{background:rgba(46,230,168,.16);border-color:rgba(46,230,168,.44);color:#a9ffe2}
+
+/* ---------- 08) النافبار ---------- */
+.topbar{
+  position:relative;z-index:90;text-align:center;font-size:.83rem;font-weight:800;
+  padding:9px 16px;color:#fff;
+  background:linear-gradient(90deg,#8b5cff,#ff2e88 45%,#ffc247 90%);
+  background-size:220% 100%;animation:pan 12s linear infinite;letter-spacing:.2px;
+}
+.topbar b{color:#1a0b2e;background:#fff;padding:1px 8px;border-radius:6px}
+.nav{position:sticky;top:0;z-index:80;padding-block:12px}
+.nav-in{
+  display:flex;align-items:center;gap:16px;padding:10px 12px;border-radius:20px;
+  border:1px solid rgba(255,255,255,.12);
+  background:linear-gradient(160deg,rgba(255,255,255,.1),rgba(255,255,255,.03));
+  backdrop-filter:blur(26px) saturate(190%);-webkit-backdrop-filter:blur(26px) saturate(190%);
+  box-shadow:0 22px 50px -30px rgba(0,0,0,1), inset 0 1px 0 rgba(255,255,255,.24);
+  transition:.4s var(--ease);
+}
+.nav.stuck .nav-in{
+  background:linear-gradient(160deg,rgba(10,14,32,.82),rgba(7,10,26,.66));
+  border-color:rgba(255,255,255,.18);
+  box-shadow:0 26px 60px -28px rgba(0,0,0,1), inset 0 1px 0 rgba(255,255,255,.18);
+}
+.logo{display:flex;align-items:center;gap:11px;font-weight:900;font-size:1.18rem;white-space:nowrap}
+.logo .mark{
+  width:44px;height:44px;border-radius:14px;display:grid;place-items:center;
+  font-size:1.15rem;font-weight:900;color:#fff;
+  background:var(--grad-1);background-size:200% 200%;
+  border:1px solid rgba(255,255,255,.45);
+  box-shadow:0 14px 30px -14px rgba(255,46,136,.95),0 0 26px -6px rgba(139,92,255,.7),inset 0 1px 0 rgba(255,255,255,.5);
+  animation:pan 8s linear infinite;flex-shrink:0;
+}
+.logo span.grad-text{font-weight:900}
+.nav-links{display:flex;align-items:center;gap:5px;margin-inline:auto}
+.nav-links a{
+  display:block;padding:10px 16px;border-radius:12px;
+  font-size:.92rem;font-weight:800;color:var(--ink-soft);
+  border:1px solid transparent;transition:.3s var(--ease);
+}
+.nav-links a:hover{
+  color:#fff;background:rgba(255,255,255,.1);
+  border-color:rgba(255,255,255,.18);
+  box-shadow:0 0 24px -8px rgba(0,229,255,.4);
+}
+.nav-links a.on{
+  color:#fff;
+  background:linear-gradient(160deg,rgba(139,92,255,.55),rgba(255,46,136,.36));
+  border-color:rgba(255,255,255,.35);
+  box-shadow:0 12px 28px -14px rgba(139,92,255,1),0 0 30px -8px rgba(255,46,136,.5),inset 0 1px 0 rgba(255,255,255,.4);
+}
+.nav-cta{flex-shrink:0}
+.burger{
+  display:none;width:46px;height:46px;border-radius:14px;
+  border:1px solid var(--glass-stroke);background:rgba(255,255,255,.08);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  place-items:center;gap:5px;flex-direction:column;
+}
+.burger i{display:block;width:20px;height:2px;border-radius:2px;background:linear-gradient(90deg,#fff,#d3c6ff);transition:.35s var(--ease)}
+.burger.open i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open i:nth-child(2){opacity:0;transform:scaleX(.4)}
+.burger.open i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ---------- 09) الهيرو ---------- */
+.hero{position:relative;padding-block:clamp(34px,6vw,74px) clamp(56px,8vw,110px)}
+.hero-in{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(26px,4vw,56px);align-items:center}
+.hero h1{
+  font-size:clamp(1.85rem,4.4vw,3.25rem);font-weight:900;
+  line-height:1.42;letter-spacing:-1px;margin-block:16px 0;
+}
+.hero .lead{
+  color:var(--ink-soft);font-size:clamp(.97rem,1.5vw,1.1rem);
+  margin-block:20px 32px;max-width:560px;line-height:2;
+}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.trust{display:flex;align-items:center;gap:14px;margin-top:34px;flex-wrap:wrap}
+.av-stack{display:flex;flex-direction:row-reverse}
+.av-stack i{
+  width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
+  font-size:.72rem;font-weight:900;font-style:normal;color:#fff;margin-left:-11px;
+  border:2px solid rgba(255,255,255,.4);box-shadow:0 8px 18px -10px rgba(0,0,0,1);
+}
+.av-stack i:nth-child(1){background:var(--grad-3)}
+.av-stack i:nth-child(2){background:var(--grad-2)}
+.av-stack i:nth-child(3){background:var(--grad-4);color:#2a1a00}
+.av-stack i:nth-child(4){background:var(--grad-5);color:#00231c}
+.trust small{color:var(--muted);font-weight:700;font-size:.86rem;line-height:1.7}
+.trust b{color:var(--ink)}
+.hero-visual{position:relative}
+.hero-card{padding:clamp(18px,2.6vw,26px);border-radius:var(--r-lg);animation:floaty 7s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.hc-head{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:6px;
+}
+.hc-head small{color:var(--muted);font-weight:800;font-size:.78rem}
+.dots{display:flex;gap:6px}
+.dots i{width:9px;height:9px;border-radius:50%;display:block}
+.dots i:nth-child(1){background:#ff5f57}
+.dots i:nth-child(2){background:#febc2e}
+.dots i:nth-child(3){background:#28c840}
+.hc-row{
+  display:flex;align-items:center;gap:14px;padding:14px 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.hc-row:last-of-type{border-bottom:0}
+.hc-row .ico{flex-shrink:0}
+.hc-row h4{font-size:.98rem;font-weight:800}
+.hc-row small{color:var(--muted);font-size:.79rem;font-weight:700}
+.hc-row .val{margin-inline-start:auto;font-size:.78rem;font-weight:900;color:var(--ok)}
+.hc-bars{
+  display:flex;align-items:flex-end;gap:7px;height:70px;margin-top:16px;
+  padding:12px;border-radius:16px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+}
+.hc-bars b{
+  flex:1;border-radius:6px 6px 3px 3px;background:var(--grad-2);opacity:.92;
+  animation:grow 2.6s var(--ease) infinite alternate;transform-origin:bottom;
+}
+.hc-bars b:nth-child(2){animation-delay:-.3s;background:var(--grad-1)}
+.hc-bars b:nth-child(3){animation-delay:-.6s;background:var(--grad-3)}
+.hc-bars b:nth-child(4){animation-delay:-.9s;background:var(--grad-5)}
+.hc-bars b:nth-child(5){animation-delay:-1.2s;background:var(--grad-4)}
+.hc-bars b:nth-child(6){animation-delay:-1.5s;background:var(--grad-1)}
+.hc-bars b:nth-child(7){animation-delay:-1.8s;background:var(--grad-2)}
+@keyframes grow{from{transform:scaleY(.55)}to{transform:scaleY(1)}}
+.chip-float{
+  position:absolute;display:inline-flex;align-items:center;gap:8px;
+  padding:10px 18px;border-radius:999px;font-size:.82rem;font-weight:900;
+  background:linear-gradient(160deg,rgba(255,255,255,.24),rgba(255,255,255,.07));
+  border:1px solid rgba(255,255,255,.35);
+  backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);
+  box-shadow:0 18px 40px -20px rgba(0,0,0,1),0 0 30px -8px rgba(139,92,255,.5),inset 0 1px 0 rgba(255,255,255,.4);
+  z-index:3;animation:floaty 5.5s ease-in-out infinite;
+}
+.chip-float.c1{top:-18px;inset-inline-start:-14px;color:#d3c6ff}
+.chip-float.c2{bottom:-16px;inset-inline-end:-10px;color:#ffe3a6;animation-delay:-2.4s}
+
+/* ---------- 10) الماركي ---------- */
+.marq{
+  overflow:hidden;padding-block:8px;
+  mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+}
+.marq-track{display:flex;gap:12px;width:max-content;animation:scrollx 34s linear infinite}
+.marq:hover .marq-track{animation-play-state:paused}
+.marq-track span{
+  padding:9px 20px;border-radius:999px;font-size:.83rem;font-weight:800;
+  color:var(--ink-soft);background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);white-space:nowrap;
+}
+@keyframes scrollx{from{transform:translateX(0)}to{transform:translateX(50%)}}
+
+/* ---------- 11) الإحصائيات ---------- */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:var(--gap)}
+.stat{padding:26px 18px;text-align:center;border-radius:var(--r)}
+.stat .num{font-size:clamp(1.7rem,3.4vw,2.35rem);font-weight:900;line-height:1.2;letter-spacing:-1px}
+.stat .lbl{color:var(--muted);font-weight:800;font-size:.85rem;margin-top:4px}
+
+/* ---------- 12) الكروت ---------- */
+.card{
+  display:flex;flex-direction:column;gap:14px;
+  padding:clamp(20px,2.8vw,30px);border-radius:var(--r-lg);overflow:hidden;
+}
+.card h3{font-size:1.16rem;font-weight:900;line-height:1.5}
+.card p{color:var(--muted);font-size:.92rem;line-height:1.95}
+.card .spacer{flex:1}
+.card ul.checks{display:flex;flex-direction:column;gap:9px;margin-top:2px}
+.card ul.checks li{
+  position:relative;padding-inline-start:26px;
+  font-size:.88rem;color:var(--ink-soft);font-weight:700;
+}
+.card ul.checks li::before{content:"✓";position:absolute;inset-inline-start:0;top:0;color:var(--ok);font-weight:900}
+.ico{
+  width:56px;height:56px;border-radius:18px;display:grid;place-items:center;font-size:1.5rem;
+  background:linear-gradient(150deg,rgba(255,255,255,.24),rgba(255,255,255,.06));
+  border:1px solid rgba(255,255,255,.26);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 12px 26px -14px rgba(0,0,0,.95);
+  flex-shrink:0;
+}
+.ico-v{background:linear-gradient(150deg,rgba(139,92,255,.65),rgba(255,46,136,.32));box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 16px 34px -16px rgba(139,92,255,1)}
+.ico-c{background:linear-gradient(150deg,rgba(0,229,255,.62),rgba(139,92,255,.32));box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 16px 34px -16px rgba(0,229,255,1)}
+.ico-p{background:linear-gradient(150deg,rgba(255,46,136,.62),rgba(139,92,255,.32));box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 16px 34px -16px rgba(255,46,136,1)}
+.ico-g{background:linear-gradient(150deg,rgba(255,194,71,.68),rgba(255,46,136,.26));box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 16px 34px -16px rgba(255,138,27,1)}
+.price{display:flex;align-items:baseline;gap:8px;font-weight:900}
+.price .now{font-size:1.3rem;color:#fff}
+.price .old{font-size:.86rem;color:#ff8ab6;text-decoration:line-through;font-weight:700}
+.meta-row{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+  padding-top:14px;border-top:1px solid rgba(255,255,255,.11);
+  font-size:.82rem;color:var(--muted);font-weight:800;
+}
+
+/* ---------- 13) بروفايل المهندس ---------- */
+.profile{
+  display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,3.4vw,40px);
+  align-items:center;padding:clamp(22px,3.4vw,40px);border-radius:var(--r-lg);overflow:hidden;
+}
+.profile::after{
+  content:"";position:absolute;inset-inline-end:-120px;top:-120px;
+  width:320px;height:320px;border-radius:50%;
+  background:radial-gradient(circle,rgba(139,92,255,.4),transparent 70%);
+  pointer-events:none;z-index:-1;
+}
+.avatar{
+  width:clamp(110px,16vw,140px);height:clamp(110px,16vw,140px);
+  border-radius:50%;display:grid;place-items:center;
+  font-size:clamp(1.5rem,3vw,2rem);font-weight:900;color:#fff;
+  background:var(--grad-3);border:2px solid rgba(255,255,255,.4);
+  box-shadow:0 30px 60px -26px rgba(255,46,136,.95),0 0 46px -10px rgba(139,92,255,.55),inset 0 3px 0 rgba(255,255,255,.55);
+  position:relative;flex-shrink:0;letter-spacing:1px;overflow:hidden;
+}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.avatar::after{
+  content:"";position:absolute;inset:-11px;border-radius:50%;
+  border:1px dashed rgba(255,255,255,.3);animation:spin 18s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.avatar.c{background:var(--grad-2);box-shadow:0 30px 60px -26px rgba(0,229,255,.9),inset 0 3px 0 rgba(255,255,255,.55)}
+.avatar.g{background:var(--grad-4);color:#2a1a00;box-shadow:0 30px 60px -26px rgba(255,138,27,.9),inset 0 3px 0 rgba(255,255,255,.6)}
+.profile .role{font-size:.84rem;font-weight:900;color:#d3c6ff;letter-spacing:.2px}
+.profile h3{font-size:clamp(1.25rem,2.6vw,1.7rem);font-weight:900;margin-block:6px 10px}
+.profile p{color:var(--ink-soft);font-size:.94rem;line-height:2;max-width:620px}
+.tags-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.tags-row span{
+  padding:6px 15px;border-radius:999px;font-size:.78rem;font-weight:800;
+  color:var(--ink-soft);background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.16);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+}
+
+/* ---------- 14) الخطوات ---------- */
+.step{padding:28px 22px;border-radius:var(--r);text-align:center;position:relative}
+.step .n{
+  width:52px;height:52px;margin:0 auto 16px;border-radius:16px;
+  display:grid;place-items:center;font-size:1.15rem;font-weight:900;color:#fff;
+  background:linear-gradient(150deg,rgba(139,92,255,.8),rgba(255,46,136,.5));
+  border:1px solid rgba(255,255,255,.35);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 14px 30px -16px rgba(139,92,255,1);
+}
+.step h4{font-size:1rem;font-weight:900;margin-bottom:6px}
+.step p{color:var(--muted);font-size:.86rem;line-height:1.9}
+
+/* ---------- 15) التقييمات ---------- */
+.review{padding:clamp(20px,2.8vw,28px);border-radius:var(--r)}
+.stars{color:var(--c4);font-size:.95rem;letter-spacing:2px}
+.review p{color:var(--ink-soft);font-size:.93rem;line-height:2;margin-block:12px}
+.reviewer{display:flex;align-items:center;gap:12px;margin-top:auto}
+.reviewer .av{
+  width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
+  font-size:.8rem;font-weight:900;color:#fff;border:1px solid rgba(255,255,255,.32);flex-shrink:0;
+}
+.reviewer b{display:block;font-size:.88rem}
+.reviewer small{color:var(--muted);font-size:.78rem}
+
+/* ---------- 16) الأسئلة الشائعة ---------- */
+.faq{display:flex;flex-direction:column;gap:12px;max-width:860px;margin-inline:auto}
+.faq-item{border-radius:var(--r-sm);overflow:hidden}
+.faq-q{
+  width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:19px 22px;background:none;border:0;text-align:start;
+  font-weight:800;font-size:.96rem;color:var(--ink);
+}
+.faq-q .plus{
+  width:30px;height:30px;border-radius:10px;display:grid;place-items:center;
+  flex-shrink:0;font-weight:900;color:#d3c6ff;
+  background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);
+  transition:.4s var(--ease);
+}
+.faq-item.open .plus{transform:rotate(135deg);background:var(--grad-3);border-color:rgba(255,255,255,.42);color:#fff}
+.faq-a{
+  max-height:0;overflow:hidden;padding-inline:22px;color:var(--muted);
+  font-size:.9rem;line-height:2;
+  transition:max-height .5s var(--ease),padding .5s var(--ease);
+}
+.faq-item.open .faq-a{padding-bottom:20px}
+
+/* ---------- 17) شريط CTA ---------- */
+.cta-band{
+  padding:clamp(28px,4.4vw,54px);border-radius:var(--r-lg);
+  text-align:center;position:relative;overflow:hidden;
+}
+.cta-band::after{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(60% 120% at 12% 0%, rgba(139,92,255,.4), transparent 60%),
+    radial-gradient(60% 120% at 88% 100%, rgba(255,46,136,.35), transparent 60%);
+  pointer-events:none;z-index:-1;
+}
+.cta-band h2{font-size:clamp(1.4rem,3vw,2.1rem);font-weight:900;line-height:1.5}
+.cta-band p{color:var(--ink-soft);margin-block:12px 26px;font-size:.96rem}
+
+/* ---------- 18) التواصل + الفورم ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(18px,3vw,34px);align-items:start}
+.info-box{display:flex;flex-direction:column;gap:12px;padding:clamp(20px,3vw,32px);border-radius:var(--r-lg)}
+.i-item{
+  display:flex;align-items:center;gap:14px;padding:14px;border-radius:16px;
+  border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:.35s var(--ease);
+}
+.i-item:hover{border-color:rgba(255,255,255,.3);transform:translateX(-5px);background:rgba(255,255,255,.09)}
+.i-item .ic{
+  width:44px;height:44px;border-radius:13px;display:grid;place-items:center;font-size:1.15rem;flex-shrink:0;
+  background:linear-gradient(150deg,rgba(255,255,255,.22),rgba(255,255,255,.05));
+  border:1px solid rgba(255,255,255,.22);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.4);
+}
+.i-item small{display:block;color:var(--muted);font-size:.75rem;font-weight:800}
+.i-item span{font-size:.9rem;font-weight:800;color:var(--ink)}
+.form-box{padding:clamp(22px,3vw,34px);border-radius:var(--r-lg)}
+.form-box label{display:block;font-size:.84rem;font-weight:900;margin-block:14px 7px;color:var(--ink-soft)}
+.form-box label:first-of-type{margin-top:0}
+.field{
+  width:100%;padding:14px 16px;border-radius:14px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(14px) saturate(170%);-webkit-backdrop-filter:blur(14px) saturate(170%);
+  color:var(--ink);font-size:.93rem;font-weight:700;outline:none;transition:.3s var(--ease);
+}
+.field::placeholder{color:#7280a4;font-weight:600}
+.field:focus{
+  border-color:rgba(139,92,255,.8);background:rgba(255,255,255,.1);
+  box-shadow:0 0 0 4px rgba(139,92,255,.22),0 0 30px -8px rgba(0,229,255,.4);
+}
+textarea.field{resize:vertical;min-height:112px}
+select.field{appearance:none;cursor:pointer}
+select.field option{background:#0b1022;color:#f2f5ff}
+.form-msg{min-height:26px;margin-top:14px;text-align:center;font-weight:800;font-size:.88rem}
+.form-msg.ok{color:var(--ok)}
+.form-msg.err{color:#ff7a9c}
+
+/* ---------- 19) الفوتر ---------- */
+footer{
+  margin-top:clamp(40px,6vw,80px);padding-top:clamp(40px,6vw,70px);
+  border-top:1px solid rgba(255,255,255,.1);
+  background:linear-gradient(180deg,rgba(255,255,255,.035),transparent 40%);
+}
+.f-in{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.15fr;gap:clamp(22px,3.4vw,40px);padding-bottom:44px}
+.f-in h5{color:#fff;font-size:.98rem;font-weight:900;margin-bottom:16px}
+.f-in a,.f-in p{
+  display:block;color:var(--muted);font-size:.88rem;font-weight:700;
+  margin-bottom:10px;line-height:1.9;transition:.3s var(--ease);
+}
+.f-in a:hover{color:#d3c6ff;transform:translateX(-4px)}
+.f-brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.1rem;margin-bottom:12px}
+.copy{
+  border-top:1px solid rgba(255,255,255,.09);text-align:center;
+  padding:20px;font-size:.82rem;color:var(--muted);font-weight:700;
+}
+.copy b{color:#d3c6ff}
+
+/* ---------- 20) عناصر عائمة ---------- */
+.progress{
+  position:fixed;top:0;inset-inline-start:0;height:3px;width:0;
+  background:var(--grad-1);background-size:200% 100%;z-index:200;
+  box-shadow:0 0 18px rgba(255,46,136,.95);animation:pan 6s linear infinite;
+}
+.wa{
+  position:fixed;bottom:22px;inset-inline-start:22px;z-index:95;
+  width:58px;height:58px;border-radius:50%;display:grid;place-items:center;
+  font-size:1.6rem;color:#fff;background:linear-gradient(150deg,#2ee67a,#128c7e);
+  border:1px solid rgba(255,255,255,.5);
+  box-shadow:0 20px 44px -16px rgba(46,230,122,.95),0 0 34px -6px rgba(46,230,122,.6),inset 0 2px 0 rgba(255,255,255,.55);
+  transition:.35s var(--ease);
+}
+.wa:hover{transform:translateY(-5px) scale(1.05)}
+.wa::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid rgba(46,230,122,.6);animation:ring 2.4s ease-out infinite}
+@keyframes ring{0%{transform:scale(1);opacity:.9}100%{transform:scale(1.7);opacity:0}}
+.to-top{
+  position:fixed;bottom:22px;inset-inline-end:22px;z-index:95;
+  width:48px;height:48px;border-radius:15px;display:grid;place-items:center;
+  font-size:1.1rem;color:#fff;border:1px solid rgba(255,255,255,.28);
+  background:linear-gradient(160deg,rgba(255,255,255,.22),rgba(255,255,255,.06));
+  backdrop-filter:blur(16px) saturate(180%);-webkit-backdrop-filter:blur(16px) saturate(180%);
+  box-shadow:0 18px 40px -20px rgba(0,0,0,1),0 0 26px -8px rgba(139,92,255,.5),inset 0 1px 0 rgba(255,255,255,.4);
+  opacity:0;pointer-events:none;transform:translateY(14px);transition:.4s var(--ease);
+}
+.to-top.on{opacity:1;pointer-events:auto;transform:none}
+.to-top:hover{border-color:rgba(255,255,255,.48)}
+.glow{
+  position:fixed;top:0;left:0;width:520px;height:520px;border-radius:50%;
+  pointer-events:none;z-index:-1;
+  background:radial-gradient(circle,rgba(139,92,255,.2),transparent 62%);
+  transform:translate(-50%,-50%);transition:opacity .5s;opacity:0;
+}
+body.has-pointer .glow{opacity:1}
+
+/* ---------- 21) ظهور + صفحات ---------- */
+.page{display:none}
+.page.on{display:block;animation:pageIn .55s var(--ease-out) both}
+@keyframes pageIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.reveal{
+  opacity:0;transform:translateY(34px);
+  transition:opacity .8s var(--ease-out),transform .8s var(--ease-out);
+  will-change:opacity,transform;
+}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- 22) المجالات المهنية (الجديد) ---------- */
+.fields-head{max-width:820px;margin:0 auto clamp(30px,4vw,50px);text-align:center}
+.fields-intro{
+  max-width:860px;margin:0 auto clamp(28px,4vw,46px);
+  padding:clamp(20px,3vw,32px);border-radius:var(--r-lg);text-align:center;
+}
+.fields-intro p{color:var(--ink-soft);font-size:.96rem;line-height:2.1}
+.fields-grid{display:flex;flex-direction:column;gap:16px;max-width:980px;margin-inline:auto}
+.field-item{border-radius:var(--r-lg);overflow:hidden;transition:.45s var(--ease)}
+.field-item:hover{border-color:rgba(255,255,255,.35);transform:translateY(-3px);box-shadow:var(--shadow-lift)}
+.field-item.open{
+  border-color:rgba(139,92,255,.6);
+  box-shadow:0 44px 90px -30px rgba(139,92,255,.6),0 0 46px -12px rgba(0,229,255,.3),inset 0 1px 0 rgba(255,255,255,.24);
+}
+.field-head{
+  width:100%;display:flex;align-items:center;gap:16px;
+  padding:clamp(16px,2.4vw,22px) clamp(18px,2.6vw,26px);
+  background:none;border:0;text-align:start;cursor:pointer;color:var(--ink);
+}
+.field-logo{
+  width:64px;height:64px;flex-shrink:0;border-radius:18px;overflow:hidden;
+  display:grid;place-items:center;
+  background:linear-gradient(150deg,rgba(255,255,255,.2),rgba(255,255,255,.05));
+  border:1px solid rgba(255,255,255,.28);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 12px 26px -14px rgba(0,0,0,.95);
+  transition:.45s var(--ease);
+}
+.field-logo img{width:100%;height:100%;object-fit:cover;display:block}
+.field-logo .logo-fb{font-size:1.7rem}
+.field-item.open .field-logo{
+  border-color:rgba(255,255,255,.55);
+  box-shadow:0 0 0 4px rgba(139,92,255,.25),0 0 30px -6px rgba(139,92,255,.7),inset 0 1px 0 rgba(255,255,255,.55);
+}
+.field-tt{flex:1;min-width:0}
+.field-tt .num{
+  display:inline-block;font-size:.72rem;font-weight:900;letter-spacing:.5px;color:#d3c6ff;
+  background:rgba(139,92,255,.18);border:1px solid rgba(139,92,255,.45);
+  border-radius:999px;padding:2px 11px;margin-bottom:6px;
+}
+.field-tt h3{font-size:clamp(1rem,2vw,1.22rem);font-weight:900;line-height:1.5}
+.field-tt small{display:block;color:var(--muted);font-size:.82rem;font-weight:800;margin-top:2px}
+.field-plus{
+  width:38px;height:38px;flex-shrink:0;border-radius:12px;display:grid;place-items:center;
+  font-size:1.15rem;font-weight:900;color:#d3c6ff;
+  background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.2);
+  transition:.45s var(--ease);
+}
+.field-item.open .field-plus{
+  transform:rotate(135deg);background:var(--grad-3);
+  border-color:rgba(255,255,255,.45);color:#fff;
+  box-shadow:0 12px 26px -12px rgba(255,46,136,.95);
+}
+.field-body{max-height:0;overflow:hidden;transition:max-height .65s var(--ease)}
+.field-body-in{
+  padding:clamp(18px,2.6vw,24px) clamp(18px,2.6vw,26px) clamp(20px,3vw,28px);
+  border-top:1px solid rgba(255,255,255,.1);
+}
+.field-slogan{
+  display:block;font-size:.92rem;font-weight:900;
+  background:var(--grad-2);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;margin-bottom:10px;
+}
+.field-desc{color:var(--ink-soft);font-size:.92rem;line-height:2.05;margin-bottom:20px}
+.field-block{
+  padding:18px;border-radius:var(--r-sm);
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.11);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  margin-bottom:14px;
+}
+.field-block:last-child{margin-bottom:0}
+.field-block h4{font-size:.92rem;font-weight:900;color:#fff;display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.field-block h4 .b-ico{
+  width:30px;height:30px;border-radius:9px;flex-shrink:0;display:grid;place-items:center;font-size:.85rem;
+  background:linear-gradient(150deg,rgba(139,92,255,.6),rgba(255,46,136,.35));
+  border:1px solid rgba(255,255,255,.28);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.45);
+}
+.field-block ul{display:flex;flex-direction:column;gap:7px}
+.field-block ul li{
+  position:relative;padding-inline-start:24px;
+  font-size:.86rem;color:var(--ink-soft);font-weight:700;line-height:1.8;
+}
+.field-block ul li::before{content:"✓";position:absolute;inset-inline-start:0;top:0;color:var(--ok);font-weight:900}
+.field-income{display:flex;flex-direction:column;gap:8px}
+.field-income .inc-row{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:11px 14px;border-radius:12px;flex-wrap:wrap;
+  background:rgba(46,230,168,.08);border:1px solid rgba(46,230,168,.28);
+  font-size:.85rem;font-weight:800;
+}
+.field-income .inc-row small{color:var(--muted);font-weight:800}
+.field-income .inc-row b{color:var(--ok);white-space:nowrap;font-weight:900}
+.field-income .inc-note{font-size:.8rem;color:var(--muted);line-height:1.9;font-weight:700;padding:10px 4px 0}
+.eng-slot{
+  display:flex;align-items:center;gap:14px;padding:14px;border-radius:16px;
+  background:rgba(255,255,255,.05);border:1px dashed rgba(255,255,255,.3);
+}
+.eng-photo{
+  width:60px;height:60px;flex-shrink:0;border-radius:50%;overflow:hidden;
+  display:grid;place-items:center;background:var(--grad-3);
+  border:2px solid rgba(255,255,255,.4);
+  box-shadow:0 12px 26px -14px rgba(255,46,136,.9),0 0 24px -6px rgba(139,92,255,.6);
+  font-weight:900;color:#fff;font-size:.85rem;
+}
+.eng-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.eng-slot small{display:block;color:var(--muted);font-size:.74rem;font-weight:800}
+.eng-slot span{font-size:.88rem;font-weight:800}
+.path-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:var(--gap)}
+.path-card{padding:24px 20px;border-radius:var(--r)}
+.path-card .p-ico{
+  width:50px;height:50px;border-radius:15px;margin-bottom:14px;
+  display:grid;place-items:center;font-size:1.3rem;
+  background:linear-gradient(150deg,rgba(139,92,255,.62),rgba(255,46,136,.34));
+  border:1px solid rgba(255,255,255,.3);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 14px 30px -16px rgba(139,92,255,1);
+}
+.path-card h4{font-size:.98rem;font-weight:900;margin-bottom:6px}
+.path-card p{color:var(--muted);font-size:.85rem;line-height:1.9}
+.disclaimer{
+  max-width:860px;margin:clamp(26px,4vw,40px) auto 0;
+  padding:20px 24px;border-radius:var(--r);
+  font-size:.82rem;color:var(--muted);line-height:2;font-weight:700;text-align:center;
+}
+.disclaimer b{color:#ffe3a6}
+
+/* ---------- 23) ريسبونسيف ---------- */
+@media (max-width:1024px){.f-in{grid-template-columns:1fr 1fr}}
+@media (max-width:900px){
+  .burger{display:flex}
+  .nav-links{
+    position:fixed;inset-inline:14px;top:132px;flex-direction:column;
+    align-items:stretch;gap:6px;margin:0;padding:14px;border-radius:20px;
+    border:1px solid rgba(255,255,255,.18);
+    background:linear-gradient(160deg,rgba(12,16,36,.97),rgba(7,10,26,.94));
+    backdrop-filter:blur(28px) saturate(190%);-webkit-backdrop-filter:blur(28px) saturate(190%);
+    box-shadow:0 40px 90px -30px rgba(0,0,0,1),inset 0 1px 0 rgba(255,255,255,.2);
+    transform:translateY(-16px) scale(.98);opacity:0;visibility:hidden;
+    transition:.4s var(--ease);z-index:85;
+  }
+  .nav-links.open{transform:none;opacity:1;visibility:visible}
+  .nav-links a{width:100%;padding:13px 16px;font-size:.95rem}
+  .nav-cta{display:none}
+  .hero-in{grid-template-columns:1fr}
+  .hero-visual{order:-1;max-width:460px;margin-inline:auto;width:100%}
+  .hero h1{letter-spacing:-.5px}
+  .hero .lead{margin-inline:auto}
+  .profile{grid-template-columns:1fr;text-align:center}
+  .profile .avatar{margin-inline:auto}
+  .profile .tags-row{justify-content:center}
+  .profile p{margin-inline:auto}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .f-in{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .hero-btns .btn{width:100%}
+  .chip-float{font-size:.75rem;padding:8px 14px}
+  .wa{width:52px;height:52px;font-size:1.4rem}
+  .to-top{width:44px;height:44px}
+  .field-head{gap:11px}
+  .field-logo{width:52px;height:52px;border-radius:14px}
+  .field-logo .logo-fb{font-size:1.35rem}
+  .field-tt h3{font-size:.98rem}
+  .field-plus{width:32px;height:32px;font-size:.95rem}
+}
+
+/* ---------- 24) تقليل الحركة ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+  }
+  .reveal{opacity:1;transform:none}
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================
+   تنسيق بانر الصورة الاحترافي والمعزول تماماً
+   ========================================================== */
+.card .card-banner-custom {
+    position: relative !important;
+    width: 100% !important;
+    height: 160px !important;
+    overflow: hidden !important;
+    border-radius: 14px !important;
+    margin-bottom: 15px !important;
+}
+
+.card .card-banner-custom img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+.card .card-banner-custom .tag-custom {
+    position: absolute !important;
+    bottom: 10px !important;
+    right: 10px !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+    padding: 4px 12px !important;
+    border-radius: 8px !important;
+    font-size: 0.85rem !important;
+    color: #fff !important;
+    z-index: 2 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+
+<!-- خلفية -->
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+<div class="glow" id="glow" aria-hidden="true"></div>
+<div class="progress" id="prog" aria-hidden="true"></div>
+
+<!-- شريط علوي -->
+<div class="topbar">🎉 عرض — خصم <b>40%</b> على اسعار الشغل لفترة محدودة</div>
+
+<!-- نافبار -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <div class="nav-in">
+      <a href="#/home" data-link class="logo">
+        <span class="mark">F</span>
+        <span>Future Skills – مهارات المستقبل<span class="grad-text"></span></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="التنقل الرئيسي">
+        <a href="#/home" data-link data-page="home" class="on">الرئيسية</a>
+        <a href="#/courses" data-link data-page="courses">الكورسات</a>
+        <a href="#/fields" data-link data-page="fields">المجالات المهنية</a>
+        <a href="#/programming" data-link data-page="programming">البرمجة</a>
+        <a href="#/design" data-link data-page="design">الجرافيك</a>
+        <a href="#/marketing" data-link data-page="marketing">التسويق</a>
+        <a href="#/contact" data-link data-page="contact">تواصل معنا</a>
+      </nav>
+
+      <a href="#/contact" data-link class="btn btn-p btn-sm nav-cta">ابدأ مشروعك ⚡</a>
+
+      <button class="burger" id="burger" aria-label="فتح القائمة" aria-expanded="false">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     صفحة الرئيسية
+     ============================================================ -->
+<main id="p-home" class="page on">
+
+  <!-- الهيرو -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-in">
+
+        <div class="hero-copy reveal">
+          <span class="pill"><i class="dot"></i> شغلنا ثقة — متوفرين علي مدار 24 ساعه  </span>
+
+          <h1>شغلنا كلو ثقة  <span class="grad-text">منافسه</span> في السوق —  شغل معتمد عالي الجوده  </h1>
+
+          <p class="lead">
+            تطوير مواقع، هوية بصرية، وتسويق بيجيب عملاء حقيقيين. فريق معتمد من شركة بلان بي خارجين معهد عالي 
+          </p>
+
+          <div class="hero-btns">
+            <a href="#/courses" data-link class="btn btn-p"> اشترك في كورس</a>
+            <a href="#/fields" data-link class="btn btn-c"> استكشف 12 مجال مطلوب</a>
+            <a href="#/programming" data-link class="btn btn-g"> اطلب شغل</a>
+          </div>
+
+          <div class="trust">
+            <div class="av-stack" aria-hidden="true">
+              <i>ن.ق</i><i>م.م</i><i>م.ك</i><i>+5</i>
+            </div>
+            <small><b>+70k متدرب</b> و <b>+320 مشروع</b> اتسلّم — بتقييم <b>100%⭐</b></small>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="chip-float c1">✔️ تسليم في الميعاد</div>
+          <div class="chip-float c2">⭐⭐⭐ 100%</div>
+
+          <div class="hero-card glass glass-strong">
+            <div class="hc-head">
+              <small>متوفرين علي مدار اليوم — live</small>
+              <div class="dots"><i></i><i></i><i></i></div>
+            </div>
+
+            <div class="hc-row">
+              <div class="ico ico-c">💻</div>
+              <div>
+                <h4>تطوير المواقع</h4>
+                <small>متاجر • أنظمة • لوحات تحكم</small>
+              </div>
+              <span class="val">+120</span>
+            </div>
+
+            <div class="hc-row">
+              <div class="ico ico-v">🎨</div>
+              <div>
+                <h4>الجرافيك ديزاين</h4>
+                <small>هوية بصرية • لوجو • سوشيال</small>
+              </div>
+              <span class="val">+240</span>
+            </div>
+
+            <div class="hc-row">
+              <div class="ico ico-g">📈</div>
+              <div>
+                <h4>التسويق الإلكتروني</h4>
+                <small>حملات ممولة • SEO • محتوى</small>
+              </div>
+              <span class="val">×4</span>
+            </div>
+
+            <div class="hc-bars" aria-hidden="true">
+              <b style="height:42%"></b>
+              <b style="height:66%"></b>
+              <b style="height:50%"></b>
+              <b style="height:84%"></b>
+              <b style="height:62%"></b>
+              <b style="height:95%"></b>
+              <b style="height:74%"></b>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ماركي -->
+  <div class="wrap sec-tight">
+    <div class="marq reveal">
+      <div class="marq-track" id="marq">
+        <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span>
+        <span>Laravel</span><span>Next.js</span><span>Figma</span><span>Photoshop</span>
+        <span>Illustrator</span><span>Meta Ads</span><span>Google Ads</span><span>SEO</span>
+        <span>Tailwind</span><span>Node.js</span><span>MySQL</span><span>Brand Identity</span>
+        <span>Flutter</span><span>After Effects</span><span>Premiere</span><span>Freelancing</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- الإحصائيات -->
+  <section class="wrap sec-tight">
+    <div class="stats-grid">
+      <div class="stat glass lift reveal">
+        <div class="num grad-text" data-count="75000" data-suffix="+">0</div>
+        <div class="lbl">Plan B</div>
+      </div>
+      <div class="stat glass lift reveal">
+        <div class="num grad-text" data-count="876" data-suffix="+">0</div>
+        <div class="lbl">مشروع متسلّم</div>
+      </div>
+      <div class="stat glass lift reveal">
+        <div class="num grad-text" data-count="99" data-suffix="%">0</div>
+        <div class="lbl"> العملاء</div>
+      </div>
+      <div class="stat glass lift reveal">
+        <div class="num grad-text" data-count="12" data-suffix="+">0</div>
+        <div class="lbl">مجال مهني متكامل</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- الخدمات -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="pill">خدماتنا</span>
+        <h2>اختار الشغل الا يناسبك </h2>
+        <p>ادخل على أي قسم  هتلاقي تفاصيل الخدمة، المطلوبه </p>
+      </div>
+
+      <div class="grid g3">
+
+        <a class="card glass lift reveal" href="#/programming" data-link>
+          <div class="ico ico-c">💻</div>
+          <h3>تصميم وتطوير المواقع</h3>
+          <p>مواقع شركات، متاجر إلكترونية، وأنظمة إدارة بسرعة تحميل عالية وتجربة استخدام نظيفة.</p>
+          <ul class="checks">
+            <li>متاجر كاملة بوسائل دفع</li>
+            <li>لوحات تحكم وإدارة محتوى</li>
+            <li>سرعة وأمان وتحسين SEO</li>
+          </ul>
+          <div class="spacer"></div>
+          <span class="btn btn-g btn-block">ادخل الان ←</span>
+        </a>
+
+        <a class="card glass lift reveal" href="#/design" data-link>
+          <div class="ico ico-v">🎨</div>
+          <h3>الجرافيك ديزاين</h3>
+          <p>هوية بصرية كاملة، لوجوهات، وتصاميم سوشيال ميديا بتوقف السكرول وبتثبّت البراند.</p>
+          <ul class="checks">
+            <li>لوجو + دليل هوية</li>
+            <li>تصاميم سوشيال ميديا شهرية</li>
+            <li>مطبوعات وبنرات بجودة طباعة</li>
+          </ul>
+          <div class="spacer"></div>
+          <span class="btn btn-g btn-block">ادخل الان ←</span>
+        </a>
+
+        <a class="card glass lift reveal" href="#/marketing" data-link>
+          <div class="ico ico-g">📈</div>
+          <h3>التسويق الإلكتروني</h3>
+          <p>حملات ممولة مبنية على بيانات، وإدارة صفحات، ومحتوى بيحوّل المتابع لعميل بيدفع.</p>
+          <ul class="checks">
+            <li>Meta &amp; Google Ads</li>
+            <li>خطة محتوى وتقارير شهرية</li>
+            <li>تحسين محركات البحث SEO</li>
+          </ul>
+          <div class="spacer"></div>
+          <span class="btn btn-g btn-block">ادخل الان ←</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <!-- الفريق -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="pill">فريق المهندسين</span>
+        <h2>اللي هيتعامل معاك <span class="grad-text">بالاسم</span></h2>
+        <p>كل قسم وراء مهندس متخصص في المجال الخاص بيه — اراجا اتاكد من كل مهندس متواصل معاه علي الارقام الخاصه بينا </p>
+      </div>
+
+      <div class="grid g3">
+
+        <article class="profile glass lift reveal">
+          <div class="avatar c">𝑬𝒏𝒈</div>
+          <div>
+            <div class="role">👨‍💻 مهندس تصميم وتطوير مواقع</div>
+            <h3>𝑬𝒏𝒈 | 𝒏𝒂𝒅𝒆𝒓 𝒌𝒂𝒔𝒔𝒆𝒎</h3>
+            <p>متخصص في تصميم وتطوير المواقع والمتاجر الإلكترونية وواجهات الاستخدام السريعة.</p>
+            <div class="tags-row">
+              <span>UI/UX</span><span>Front-End</span><span>متاجر</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="profile glass lift reveal">
+          <div class="avatar">𝑬𝒏𝒈</div>
+          <div>
+            <div class="role">🎨 مهندس جرافيك</div>
+            <h3>𝑬𝒏𝒈 | 𝒎𝒐𝒉𝒂𝒎𝒆𝒅 </h3>
+            <p>متخصص في الهوية البصرية والتصاميم الإعلانية اللي بتوقف السكرول.</p>
+            <div class="tags-row">
+              <span>Brand</span><span>Photoshop</span><span>Illustrator</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="profile glass lift reveal">
+          <div class="avatar g">𝑬𝒏𝒈</div>
+          <div>
+            <div class="role">📈 مهندس تسويق</div>
+            <h3>𝑬𝒏𝒈 | 𝒎𝒐𝒉𝒂𝒎𝒆𝒅 𝒌𝒂𝒎𝒂𝒍</h3>
+            <p>متخصص في الحملات الممولة والنمو المدفوع بالأرقام مش بالمزاج.</p>
+            <div class="tags-row">
+              <span>Meta Ads</span><span>Google Ads</span><span>SEO</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <!-- الخطوات -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="pill">طريقة الشغل</span>
+        <h2>4 خطوات وبتبقى <span class="grad-text">على النت</span></h2>
+      </div>
+      <div class="grid g4">
+        <div class="step glass lift reveal"><div class="n">01</div><h4>الطلب</h4><p>تبعتلنا فكرة مشروعك من الفورم.</p></div>
+        <div class="step glass lift reveal"><div class="n">02</div><h4>التحليل</h4><p>بنحدد الخطة والسعر والمدة بدقة.</p></div>
+        <div class="step glass lift reveal"><div class="n">03</div><h4>التنفيذ</h4><p>شغل على مراحل بمراجعة معاك خطوة بخطوة.</p></div>
+        <div class="step glass lift reveal"><div class="n">04</div><h4>التسليم</h4><p>تسليم + دعم فني بعد التسليم.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- التقييمات -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="pill">آراء العملاء</span>
+        <h2>✅ <span class="grad-text"> كلامنا ثقة</span></h2>
+      </div>
+      <div class="grid g3">
+        <article class="review glass lift reveal">
+          <div class="stars">★★★★★</div>
+          <p>"طلبت متجر إلكتروني والتسليم كان قبل الميعاد بثلاثة أيام، والأهم إن المتجر اشتغل من أول مرة."</p>
+          <div class="reviewer">
+            <div class="av" style="background:var(--grad-2);color:#00231c">أح</div>
+            <div><b>أحمد مصطفى</b><small>صاحب براند ملابس</small></div>
+          </div>
+        </article>
+        <article class="review glass lift reveal">
+          <div class="stars">★★★★★</div>
+          <p>"الهوية البصرية اللي عملها فريق الجرافيك غيّرت شكل الصفحة بالكامل — التفاعل زاد أكتر من الضعف."</p>
+          <div class="reviewer">
+            <div class="av" style="background:var(--grad-3)">س ر</div>
+            <div><b>سارة رمضان</b><small>أونلاين بزنس</small></div>
+          </div>
+        </article>
+        <article class="review glass lift reveal">
+          <div class="stars">★★★★★</div>
+          <p>"الحملات الممولة كانت بالأرقام مش كلام — التكلفة لكل عميل نزلت بشكل واضح في أقل من شهر."</p>
+          <div class="reviewer">
+            <div class="av" style="background:var(--grad-4);color:#2a1a00">م ع</div>
+            <div><b>محمود علي</b><small>مدير تسويق</small></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- الأسئلة -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="pill">أسئلة شائعة</span>
+        <h2>غالبًا سؤالك موجود <span class="grad-text">هنا</span></h2>
+      </div>
+
+      <div class="faq reveal" id="faq">
+        <div class="faq-item glass">
+          <button class="faq-q" type="button">الكورسات أونلاين ولا حضوري؟ <span class="plus">+</span></button>
+          <div class="faq-a">كل حاجه اونلاين و كمان في تارجت كل شهر يعني تقدر تدخل مبلغ كل شهر .</div>
+        </div>
+        <div class="faq-item glass">
+          <button class="faq-q" type="button">بعد الكورس هل في فرصة شغل؟ <span class="plus">+</span></button>
+          <div class="faq-a">المتميزين بينضموا لفريق الشغل أو مشاريع الفريلانس معانا، وبنوصّي بيهم للعملاء.</div>
+        </div>
+        <div class="faq-item glass">
+          <button class="faq-q" type="button">مدة تنفيذ المشروع قد إيه؟ <span class="plus">+</span></button>
+          <div class="faq-a">بتختلف حسب حجم المشروع — نعمل بسرعه فائقه  للمتاجر والأنظمة.</div>
+        </div>
+        <div class="faq-item glass">
+          <button class="faq-q" type="button">في دعم بعد التسليم؟ <span class="plus">+</span></button>
+          <div class="faq-a">أيوه، دعم فني مجاني لمدة محددة بعد التسليم حسب الباقة، وبعدها بعقود صيانة اختيارية.</div>
+        </div>
+        <div class="faq-item glass">
+          <button class="faq-q" type="button">أقدر أدفع على مراحل؟ <span class="plus">+</span></button>
+          <div class="faq-a">أكيد — الدفع بيتم على مراحل مرتبطة بنقاط تسليم واضحة في العقد.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="wrap sec-tight">
+    <div class="cta-band glass glass-strong reveal">
+      <span class="pill"><i class="dot"></i> بنقبل عدد مشاريع محدود شهريًا</span>
+      <h2 style="margin-top:16px">جاهز تبدأ <span class="grad-text">خطتك البديلة</span>؟</h2>
+      <p>ابعت تفاصيل مشروعك وهيرد عليك المهندس المسؤول خلال 24 ساعة.</p>
+      <a href="#/contact" data-link class="btn btn-p"> اطلب مشروعك الان</a>
+    </div>
+  </section>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ============================================================
+     صفحة الكورسات
+     ============================================================ -->
+<main id="p-courses" class="page">
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="pill">🎓 الكورسات التدريبية</span>
+        <h2>اختار كورسك وابدأ <span class="grad-text">رحلتك</span></h2>
+        <p>كورسات أونلاين لايف + حضوري، بتسجيلات ترجع لها، وبمشروع تخرج حقيقي.</p>
+      </div>
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <div class="grid g3">
+
+     
+     
+   <article class="card glass lift reveal">
+    <div class="card-banner-custom">
+        <img src="IMG-20261031-WA0061.jpg" alt="برمجة المواقع">
+        <span class="tag-custom">We must succeed</span>
+    </div>
+    
+    <h3>برمجة المواقع</h3>
+    
+    <p style="font-size: 1.05rem; font-weight: 600; line-height: 1.6; margin-bottom: 12px; color: #fff;">
+        اختر الكورس المناسب لطموحك وابدأ رحلتك نحو الاحتراف!
+    </p>
+    
+    <ul class="checks" style="font-size: 0.92rem; line-height: 1.7; opacity: 0.9;">
+        <li>اكتشف الكورسات المتاحة، واستفسر عن المحتوى والتفاصيل والأسعار، واطلب الكورس المناسب لك بسهولة.</li>
+        <li>✅ كورسات معتمدة من شركة Plan B.</li>
+        <li>ابدأ خطوتك الأولى نحو مستقبلك المهني!</li>
+    </ul>
+
+    <a href="#/contact" data-link data-dept="course-web" class="btn btn-p btn-block">اطلب الان ←</a>
+</article>
+
+
+
+
+
+<article class="card glass lift reveal">
+    <div class="card-banner-custom">
+        <img src="IMG-20261031-WA0063.jpg" alt="برمجة التطبيقات">
+        <span class="tag-custom">لازم ننجح</span>
+    </div>
+    
+    <h3>برمجة التطبيقات</h3>
+    
+    <p style="font-size: 1.05rem; font-weight: 600; line-height: 1.6; margin-bottom: 12px; color: #fff;">
+        اختر الكورس المناسب لطموحك وابدأ رحلتك نحو الاحتراف!
+    </p>
+    
+    <ul class="checks" style="font-size: 0.92rem; line-height: 1.7; opacity: 0.9;">
+        <li>اكتشف الكورسات المتاحة، واستفسر عن المحتوى والتفاصيل والأسعار، واطلب الكورس المناسب لك بسهولة.</li>
+        <li>✅ كورسات معتمدة من شركة Plan B.</li>
+        <li>ابدأ خطوتك الأولى نحو مستقبلك المهني!</li>
+    </ul>
+
+    <a href="#/contact" data-link data-dept="course-apps" class="btn btn-p btn-block">اطلب الان ←</a>
+</article>
+
+
+
+
+
+<article class="card glass lift reveal">
+    <div class="card-banner-custom">
+        <img src="IMG-20261031-WA0060.jpg" alt="الجرافيك ديزاين">
+        <span class="tag-custom">لازم ننجح</span>
+    </div>
+    
+    <h3>الجرافيك ديزاين</h3>
+    
+    <p style="font-size: 1.05rem; font-weight: 600; line-height: 1.6; margin-bottom: 12px; color: #fff;">
+        اختر الكورس المناسب لطموحك وابدأ رحلتك نحو الاحتراف!
+    </p>
+    
+    <ul class="checks" style="font-size: 0.92rem; line-height: 1.7; opacity: 0.9;">
+        <li>اكتشف الكورسات المتاحة، واستفسر عن المحتوى والتفاصيل والأسعار، واطلب الكورس المناسب لك بسهولة.</li>
+        <li>✅ كورسات معتمدة من شركة Plan B.</li>
+        <li>ابدأ خطوتك الأولى نحو مستقبلك المهني!</li>
+    </ul>
+
+    <a href="#/contact" data-link data-dept="course-graphic" class="btn btn-p btn-block">اطلب الان ←</a>
+</article>
+
+
+
+
+
+<article class="card glass lift reveal">
+    <div class="card-banner-custom">
+        <img src="IMG-20261031-WA0052.jpg" alt="التسويق الإلكتروني والإعلانات الممولة">
+        <span class="tag-custom">لازم ننجح</span>
+    </div>
+    
+    <h3>التسويق الإلكتروني والإعلانات الممولة</h3>
+    
+    <p style="font-size: 1.05rem; font-weight: 600; line-height: 1.6; margin-bottom: 12px; color: #fff;">
+        اختر الكورس المناسب لطموحك وابدأ رحلتك نحو الاحتراف!
+    </p>
+    
+    <ul class="checks" style="font-size: 0.92rem; line-height: 1.7; opacity: 0.9;">
+        <li>اكتشف الكورسات المتاحة، واستفسر عن المحتوى والتفاصيل والأسعار، واطلب الكورس المناسب لك بسهولة.</li>
+        <li>✅ كورسات معتمدة من شركة Plan B.</li>
+        <li>ابدأ خطوتك الأولى نحو مستقبلك المهني!</li>
+    </ul>
+
+    <a href="#/contact" data-link data-dept="course-marketing" class="btn btn-p btn-block">اطلب الان ←</a>
+</article>
+
+
+
+
+
+<article class="card glass lift reveal">
+    <div class="card-banner-custom">
+        <img src="IMG-20261031-WA0066.jpg" alt="التصوير والمونتاج وصناعة المحتوى">
+        <span class="tag-custom">لازم ننجح</span>
+    </div>
+    
+    <h3>التصوير والمونتاج وصناعة المحتوى</h3>
+    
+    <p style="font-size: 1.05rem; font-weight: 600; line-height: 1.6; margin-bottom: 12px; color: #fff;">
+        اختر الكورس المناسب لطموحك وابدأ رحلتك نحو الاحتراف!
+    </p>
+    
+    <ul class="checks" style="font-size: 0.92rem; line-height: 1.7; opacity: 0.9;">
+        <li>اكتشف الكورسات المتاحة، واستفسر عن المحتوى والتفاصيل والأسعار، واطلب الكورس المناسب لك بسهولة.</li>
+        <li>✅ كورسات معتمدة من شركة Plan B.</li>
+        <li>ابدأ خطوتك الأولى نحو مستقبلك المهني!</li>
+    </ul>
+
+    <a href="#/contact" data-link data-dept="course-media" class="btn btn-p btn-block">اطلب الان ←</a>
+</article>
+
+
+
+
+
+<article class="card glass lift reveal">
+    <div class="card-banner-custom">
+        <img src="IMG-20261031-WA0067.jpg" alt="ريادة الأعمال">
+        <span class="tag-custom">لازم ننجح</span>
+    </div>
+    
+    <h3>ريادة الأعمال</h3>
+    
+    <p style="font-size: 1.05rem; font-weight: 600; line-height: 1.6; margin-bottom: 12px; color: #fff;">
+        اختر الكورس المناسب لطموحك وابدأ رحلتك نحو الاحتراف!
+    </p>
+    
+    <ul class="checks" style="font-size: 0.92rem; line-height: 1.7; opacity: 0.9;">
+        <li>اكتشف الكورسات المتاحة، واستفسر عن المحتوى والتفاصيل والأسعار، واطلب الكورس المناسب لك بسهولة.</li>
+        <li>✅ كورسات معتمدة من شركة Plan B.</li>
+        <li>ابدأ خطوتك الأولى نحو مستقبلك المهني!</li>
+    </ul>
+
+    <a href="#/contact" data-link data-dept="course-business" class="btn btn-p btn-block">اطلب الان ←</a>
+</article>
+
+
+
+
+
+<article class="card glass lift reveal">
+    <div class="card-banner-custom">
+        <img src="IMG-20261031-WA0068.jpg" alt="اللغة الإنجليزية">
+        <span class="tag-custom">لازم ننجح</span>
+    </div>
+    
+    <h3>اللغة الإنجليزية</h3>
+    
+    <p style="font-size: 1.05rem; font-weight: 600; line-height: 1.6; margin-bottom: 12px; color: #fff;">
+        اختر الكورس المناسب لطموحك وابدأ رحلتك نحو الاحتراف!
+    </p>
+    
+    <ul class="checks" style="font-size: 0.92rem; line-height: 1.7; opacity: 0.9;">
+        <li>اكتشف الكورسات المتاحة، واستفسر عن المحتوى والتفاصيل والأسعار، واطلب الكورس المناسب لك بسهولة.</li>
+        <li>✅ كورسات معتمدة من شركة Plan B.</li>
+        <li>ابدأ خطوتك الأولى نحو مستقبلك المهني!</li>
+    </ul>
+
+    <a href="#/contact" data-link data-dept="course-english" class="btn btn-p btn-block">اطلب الان ←</a>
+</article>
+
+
+
+
+
+<article class="card glass lift reveal">
+    <div class="card-banner-custom">
+        <img src="IMG-20261031-WA0069.jpg" alt="اللغة الإسبانية">
+        <span class="tag-custom">لازم ننجح</span>
+    </div>
+    
+    <h3>اللغة الإسبانية</h3>
+    
+    <p style="font-size: 1.05rem; font-weight: 600; line-height: 1.6; margin-bottom: 12px; color: #fff;">
+        اختر الكورس المناسب لطموحك وابدأ رحلتك نحو الاحتراف!
+    </p>
+    
+    <ul class="checks" style="font-size: 0.92rem; line-height: 1.7; opacity: 0.9;">
+        <li>اكتشف الكورسات المتاحة، واستفسر عن المحتوى والتفاصيل والأسعار، واطلب الكورس المناسب لك بسهولة.</li>
+        <li>✅ كورسات معتمدة من شركة Plan B.</li>
+        <li>ابدأ خطوتك الأولى نحو مستقبلك المهني!</li>
+    </ul>
+
+    <a href="#/contact" data-link data-dept="course-spanish" class="btn btn-p btn-block">اطلب الان ←</a>
+</article>
+
+
+
+
+
+<article class="card glass lift reveal">
+    <div class="card-banner-custom">
+        <img src="IMG-20261031-WA0070.jpg" alt="اللغة الألمانية">
+        <span class="tag-custom">لازم ننجح</span>
+    </div>
+    
+    <h3>اللغة الألمانية</h3>
+    
+    <p style="font-size: 1.05rem; font-weight: 600; line-height: 1.6; margin-bottom: 12px; color: #fff;">
+        اختر الكورس المناسب لطموحك وابدأ رحلتك نحو الاحتراف!
+    </p>
+    
+    <ul class="checks" style="font-size: 0.92rem; line-height: 1.7; opacity: 0.9;">
+        <li>اكتشف الكورسات المتاحة، واستفسر عن المحتوى والتفاصيل والأسعار، واطلب الكورس المناسب لك بسهولة.</li>
+        <li>✅ كورسات معتمدة من شركة Plan B.</li>
+        <li>ابدأ خطوتك الأولى نحو مستقبلك المهني!</li>
+    </ul>
+
+    <a href="#/contact" data-link data-dept="course-german" class="btn btn-p btn-block">اطلب الان ←</a>
+</article>
+
+
+
+
+
+<article class="card glass lift reveal">
+    <div class="card-banner-custom">
+        <img src="IMG-20261031-WA0065.jpg" alt="تطوير الويب">
+        <span class="tag-custom">لازم ننجح</span>
+    </div>
+    
+    <h3>تطوير الويب</h3>
+    
+    <p style="font-size: 1.05rem; font-weight: 600; line-height: 1.6; margin-bottom: 12px; color: #fff;">
+        اختر الكورس المناسب لطموحك وابدأ رحلتك نحو الاحتراف!
+    </p>
+    
+    <ul class="checks" style="font-size: 0.92rem; line-height: 1.7; opacity: 0.9;">
+        <li>اكتشف الكورسات المتاحة، واستفسر عن المحتوى والتفاصيل والأسعار، واطلب الكورس المناسب لك بسهولة.</li>
+        <li>✅ كورسات معتمدة من شركة Plan B.</li>
+        <li>ابدأ خطوتك الأولى نحو مستقبلك المهني!</li>
+    </ul>
+
+    <a href="#/contact" data-link data-dept="course-webdev" class="btn btn-p btn-block">اطلب الان ←</a>
+</article>
+  
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+                                                
+                    
+                      
+                        
+                          
+                            
+                              
+                                
+                                  
+        </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="pill">بتخرج بإيه؟</span>
+        <h2>3 حاجات بتخرج بيهم من كل <span class="grad-text">كورس</span></h2>
+      </div>
+      <div class="grid g3">
+        <div class="step glass lift reveal"><div class="n">📜</div><h4>شهادة معتمدة</h4><p>شهادة إتمام من Future Skills – مهارات المستقبل بتوثيق رقمي.</p></div>
+        <div class="step glass lift reveal"><div class="n">🗂️</div><h4>بورتفوليو حقيقي</h4><p>مشروع تخرج جاهز تقدمه لأي شركة.</p></div>
+        <div class="step glass lift reveal"><div class="n">🤝</div><h4>توصية شغل</h4><p>نرشحك لفرص شغل بعد التفوق في الكورس.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+
+
+
+
+
+
+
+
+<!-- ============================================================
+     صفحة المجالات المهنية (12 مجال)
+     ============================================================ -->
+<main id="p-fields" class="page">
+
+  <section class="sec">
+    <div class="wrap">
+
+      <div class="fields-head">
+        <span class="pill reveal"><i class="dot"></i> ابدا في مستقبلك من دلوقتي</span>
+        <h2 class="reveal" style="font-size:clamp(1.6rem,3.6vw,2.6rem);font-weight:900;line-height:1.45;margin-top:16px;letter-spacing:-.6px">
+          اختار مجالك… وحوّل شغفك <span class="grad-text">لمصدر دخل</span>
+        </h2>
+        <p class="reveal" style="color:var(--muted);margin-top:14px;font-size:clamp(.95rem,1.5vw,1.06rem)">
+          دوس على أي مجال وبيفتح لك الشرح الكامل: المسار، فرص العمل، والدخل الاسترشادي.
+        </p>
+      </div>
+
+      <div class="fields-intro glass reveal">
+        <p>
+          العالم بيتغير بسرعة، والفرص الجديدة بقت مرتبطة بالمهارات اللي تقدر تقدم بيها قيمة حقيقية.
+          سواء هدفك تشتغل في شركة، أو تبدأ مشروعك الخاص، أو تشتغل من البيت مع عملاء من مختلف أنحاء العالم،
+          هنا هتلاقي مسارات تدريبية متكاملة بتبدأ من الصفر وبتساعدك تبني مهارة عملية وتجهز نفسك لسوق العمل.
+          كل مسار بيجمع بين التخصص والتطبيق العملي والمشروعات، بالإضافة إلى السوفت سكيلز
+          وأدوات الذكاء الاصطناعي والفري لانسنج ولينكد إن والبورتفوليو والتأهيل المهني.
+        </p>
+      </div>
+
+      <div class="fields-grid" id="fieldsList">
+
+        <!-- ═══ 1) التسويق الإلكتروني ═══ -->
+        <div class="field-item glass reveal">
+          <button class="field-head" type="button">
+            <span class="field-logo">
+              <!-- ⬅️ لوجو المجال: src="logos/marketing.png" -->
+              <img src="IMG-20261031-WA0052.jpg" alt="لوجو التسويق الإلكتروني" data-fb="📈">
+            </span>
+            <span class="field-tt">
+              <span class="num">مجال 01</span>
+              <h3>التسويق الإلكتروني والإعلانات الممولة</h3>
+              <small>حوّل الإنترنت إلى مساحة لفرصك المهنية</small>
+            </span>
+            <span class="field-plus">+</span>
+          </button>
+          <div class="field-body">
+            <div class="field-body-in">
+              <b class="field-slogan">حوّل الإنترنت إلى مساحة لفرصك المهنية</b>
+              <p class="field-desc">
+                التسويق الإلكتروني من المجالات اللي بقت أساسية لأي شركة أو مشروع عايز يوصل لعملائه ويزود مبيعاته.
+                المسار بيبدأ من الصفر وبيغطي أساسيات التسويق، ودراسة السوق والعملاء، وإدارة صفحات السوشيال ميديا،
+                وصناعة المحتوى، وكتابة الإعلانات، وإدارة الحملات الممولة، وتحليل النتائج،
+                واستخدام أدوات الذكاء الاصطناعي في التسويق.
+              </p>
+              <div class="field-block">
+                <h4><span class="b-ico">💼</span> فرص العمل بعد اكتساب المهارة</h4>
+                <ul><li>Digital Marketing Specialist</li><li>Social Media Manager</li><li>Media Buyer</li><li>Content Marketer</li><li>Freelance Digital Marketer</li></ul>
+              </div>
+              <div class="field-block">
+                <h4><span class="b-ico">💰</span> الدخل الشهري الاسترشادي</h4>
+                <div class="field-income">
+                  <div class="inc-row"><small>بداية المسار المهني</small><b>8,000 – 17,000 جنيه</b></div>
+                  <div class="inc-row"><small>مع الخبرة والعملاء</small><b>20,000 – 40,000 جنيه أو أكثر</b></div>
+                  <p class="inc-note">(حوالي 145 – 718 دولار حسب المستوى)</p>
+                </div>
+              </div>
+              <div class="field-block">
+                <h4><span class="b-ico">💡</span> ليه المجال ده؟</h4>
+                <p style="color:var(--ink-soft);font-size:.87rem;line-height:2">
+                  تخيل إنك تقدر تدير الحملات التسويقية لأكثر من مشروع، وتقدم خدماتك لشركات وعملاء من داخل مصر وخارجها.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ 2) الجرافيك ديزاين ═══ -->
+        <div class="field-item glass reveal">
+          <button class="field-head" type="button">
+            <span class="field-logo">
+              <!-- ⬅️ لوجو المجال -->
+              <img src="IMG-20261031-WA0060.jpg" alt="لوجو الجرافيك ديزاين" data-fb="🎨">
+            </span>
+            <span class="field-tt">
+              <span class="num">مجال 02</span>
+              <h3>الجرافيك ديزاين</h3>
+              <small>خلي أفكارك تتحول لتصميمات لها قيمة</small>
+            </span>
+            <span class="field-plus">+</span>
+          </button>
+          <div class="field-body">
+            <div class="field-body-in">
+              <b class="field-slogan">خلي أفكارك تتحول لتصميمات لها قيمة</b>
+              <p class="field-desc">
+                كل إعلان ناجح وكل علامة تجارية مميزة وراها تصميم بصري قوي. الجرافيك ديزاين بيديك القدرة
+                على تحويل الأفكار لصور وتصميمات بتوصل الرسالة وتجذب الجمهور. المسار بيبدأ من أساسيات
+                التصميم والألوان والخطوط والتكوين، وبعدها برامج الفوتوشوب والإليستريتور، وتصميم اللوجوهات
+                والبوستات والإعلانات والهويات البصرية، مع مشروعات عملية لبناء بورتفوليو احترافي.
+              </p>
+              <div class="field-block">
+                <h4><span class="b-ico">💼</span> فرص العمل</h4>
+                <ul><li>Graphic Designer</li><li>Brand Identity Designer</li><li>Social Media Designer</li><li>Advertising Designer</li><li>Freelance Graphic Designer</li></ul>
+              </div>
+              <div class="field-block">
+                <h4><span class="b-ico">💰</span> الدخل الشهري الاسترشادي</h4>
+                <div class="field-income">
+                  <div class="inc-row"><small>بداية المسار المهني</small><b>10,000 – 18,000 جنيه</b></div>
+                  <div class="inc-row"><small>مع الخبرة والعملاء</small><b>18,000 – 35,000 جنيه أو أكثر</b></div>
+                  <p class="inc-note">(حوالي 179 – 628 دولار حسب المستوى)</p>
+                </div>
+              </div>
+              <div class="field-block">
+                <h4><span class="b-ico">💡</span> ليه المجال ده؟</h4>
+                <p style="color:var(--ink-soft);font-size:.87rem;line-height:2">
+                  مهارة التصميم ممكن تخليك تشتغل مع شركات وبراندات مختلفة، أو تبني لنفسك قاعدة عملاء وتبيع خدماتك بشكل مستقل.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ 3) برمجة المواقع ═══ -->
+        <div class="field-item glass reveal">
+          <button class="field-head" type="button">
+            <span class="field-logo">
+              <!-- ⬅️ لوجو المجال -->
+              <img src="IMG-20261031-WA0061.jpg" alt="لوجو برمجة المواقع" data-fb="🌐">
+            </span>
+            <span class="field-tt">
+              <span class="num">مجال 03</span>
+              <h3>برمجة المواقع الإلكترونية</h3>
+              <small>ابنِ مواقع العالم الرقمي بنفسك</small>
+            </span>
+            <span class="field-plus">+</span>
+          </button>
+          <div class="field-body">
+            <div class="field-body-in">
+              <b class="field-slogan">ابنِ مواقع العالم الرقمي بنفسك</b>
+              <p class="field-desc">
+                كل شركة تقريبًا محتاجة موقع يعرض خدماتها أو منتجاتها، وده بيخلي تطوير المواقع من المهارات
+                المهمة في سوق التكنولوجيا. المسار بيبدأ من الصفر، وبيشمل أساسيات البرمجة، وHTML وCSS
+                وJavaScript، وتصميم صفحات المواقع، وتطوير الواجهات التفاعلية، وتنفيذ مواقع للشركات
+                والمتاجر والمشروعات المختلفة.
+              </p>
+              <div class="field-block">
+                <h4><span class="b-ico">💼</span> فرص العمل</h4>
+                <ul><li>Website Developer</li><li>Front-End Developer</li><li>Web Designer</li><li>Freelance Web Developer</li></ul>
+              </div>
+              <div class="field-block">
+                <h4><span class="b-ico">💰</span> الدخل الشهري الاسترشادي</h4>
+                <div class="field-income">
+                  <div class="inc-row"><small>بداية المسار المهني</small><b>10,000 – 18,000 جنيه</b></div>
+                  <div class="inc-row"><small>مع الخبرة والتخصص</small><b>18,000 – 35,000 جنيه أو أكثر</b></div>
+                  <p class="inc-note">(حوالي 179 – 628 دولار حسب المستوى)</p>
+                </div>
+              </div>
+              <div class="field-block">
+                <h4><span class="b-ico">💡</span> ليه المجال ده؟</h4>
+                <p style="color:var(--ink-soft);font-size:.87rem;line-height:2">
+                  تقدر تنفذ موقع لشركة أو متجر إلكتروني أو مشروع ناشئ، وتحوّل مهارتك لخدمات ومشروعات مدفوعة.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ 4) برمجة التطبيقات ═══ -->
+        <div class="field-item glass reveal">
+          <button class="field-head" type="button">
+            <span class="field-logo">
+              <!-- ⬅️ لوجو المجال -->
+              <img src="IMG-20261031-WA0063.jpg" alt="لوجو برمجة التطبيقات" data-fb="📱">
+            </span>
+            <span class="field-tt">
+              <span class="num">مجال 04</span>
+              <h3>برمجة التطبيقات</h3>
+              <small>حوّل أفكارك لتطبيقات بيستخدمها الناس</small>
+            </span>
+            <span class="field-plus">+</span>
+          </button>
+          <div class="field-body">
+            <div class="field-body-in">
+              <b class="field-slogan">حوّل أفكارك لتطبيقات بيستخدمها الناس</b>
+              <p class="field-desc">
+                التطبيقات بقت جزء من حياتنا اليومية، من التسوق والتوصيل للتعليم والخدمات والبنوك.
+                والفرصة هنا إنك تكون الشخص اللي بيصمم ويطور التطبيقات دي. المسار بيبدأ بأساسيات البرمجة،
+                وتصميم واجهات التطبيقات، وتطوير تطبيقات الموبايل، وربط البيانات، واختبار التطبيقات وتنفيذ مشروعات عملية.
+              </p>
+              <div class="field-block">
+                <h4><span class="b-ico">💼</span> فرص العمل</h4>
+                <ul><li>Android Developer</li><li>iOS Developer</li><li>Mobile App Developer</li><li>Flutter Developer</li><li>Freelance App Developer</li></ul>
+              </div>
+              <div class="field-block">
+                <h4><span class="b-ico">💰</span> الدخل الشهري الاسترشادي</h4>
+                <div class="field-income">
+                  <div class="inc-row"><small>بداية المسار المهني</small><b>18,000 – 27,000 جنيه</b></div>
+                  <div class="inc-row"><small>مع الخبرة</small><b>27,000 – 43,500 جنيه أو أكثر</b></div>
+                  <p class="inc-note">(حوالي 323 – 780 دولار حسب المستوى)</p>
+                </div>
+              </div>
+              <div class="field-block">
+                <h4><span class="b-ico">💡</span> ليه المجال ده؟</h4>
+                <p style="color:var(--ink-soft);font-size:.87rem;line-height:2">
+                  تخيل إن فكرة تطبيق عندك تتحول لمنتج حقيقي، أو تشتغل على تطوير تطبيقات لشركات وعملاء من مختلف الدول.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ 5) تطوير الويب ═══ -->
+        <div class="field-item glass reveal">
+          <button class="field-head" type="button">
+            <span class="field-logo">
+              <!-- ⬅️ لوجو المجال -->
+              <img src="IMG-20261031-WA0065.jpg" alt="لوجو تطوير الويب" data-fb="⚙️">
+            </span>
+            <span class="field-tt">
+              <span class="num">مجال 05</span>
+              <h3>تطوير الويب</h3>
+              <small>مش بس مواقع… طوّر أنظمة إلكترونية متكاملة</small>
+            </span>
+            <span class="field-plus">+</span>
+          </button>
+          <div class="field-body">
+            <div class="field-body-in">
+              <b class="field-slogan">مش بس مواقع… طوّر أنظمة إلكترونية متكاملة</b>
+              <p class="field-desc">
+                تطوير الويب بيوسع مهارات البرمجة من مجرد تصميم صفحات إلى بناء أنظمة وتطبيقات ويب متكاملة.
+                المسار بيغطي تطوير الواجهات الأمامية، والبرمجة الخلفية، وقواعد البيانات، والتعامل مع الخوادم،
+                وربط أجزاء النظام ببعضها، وتنفيذ مشروعات عملية.
+              </p>
+              <div class="field-block">
+                <h4><span class="b-ico">💼</span> فرص العمل</h4>
+                <ul><li>Front-End Developer</li><li>Back-End Developer</li><li>Full-Stack Developer</li><li>Web Application Developer</li></ul>
+              </div>
+              <div class="field-block">
+                <h4><span class="b-ico">💰</span> الدخل الشهري الاسترشادي</h4>
+                <div class="field-income">
+                  <div class="inc-row"><small>بداية المسار المهني</small><b>10,000 – 18,000 جنيه</b></div>
+                  <div class="inc-row"><small>مع الخبرة والتخصص</small><b>25,000 – 45,000 جنيه أو أكثر</b></div>
+                  <p class="inc-note">(حوالي 179 – 807 دولار حسب المستوى)</p>
+                </div>
+              </div>
+              <div class="field-block">
+                <h4><span class="b-ico">💡</span> ليه المجال ده؟</h4>
+                <p style="color:var(--ink-soft);font-size:.87rem;line-height:2">
+                  المجال بيفتح فرص للعمل في شركات التكنولوجيا، أو تطوير أنظمة للشركات، أو تنفيذ مشروعات مستقلة لعملاء محليين ودوليين.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ 6) التصوير الفوتوغرافي ═══ -->
+        <div class="field-item glass reveal">
+          <button class="field-head" type="button">
+            <span class="field-logo">
+              <!-- ⬅️ لوجو المجال -->
+              <img src="IMG-20261031-WA0066.jpg" alt="لوجو التصوير الفوتوغرافي" data-fb="📷">
+            </span>
+            <span class="field-tt">
+              <span class="num">مجال 06</span>
+              <h3>التصوير الفوتوغرافي</h3>
+              <small>حوّل عينك الفنية لمهارة احترافية</small>
+            </span>
+            <span class="field-plus">+</span>
+          </button>
+          <div class="field-body">
+            <div class="field-body-in">
+              <b class="field-slogan">حوّل عينك الفنية لمهارة احترافية</b>
+              <p class="field-desc">
+                الصورة القوية ممكن تبيع منتج، وتبني هوية علامة تجارية، وتحكي قصة كاملة من غير كلام.
+                المسار بيبدأ من أساسيات التصوير، والتعامل مع الكاميرات والعدسات، والإضاءة والزوايا والتكوين،
+                وتصوير المنتجات والأشخاص والإعلانات، وتحسين جودة الصور.
+              </p>
+              <div class="field-block">
+                <h4><span class="b-ico">💼</span> فرص العمل</h4>
+                <ul><li>Professional Photographer</li><li>Product Photographer</li><li>Advertising Photographer</li><li>Event Photographer</li><li>Freelance Photographer</li></ul>
+              </div>
+              <div class="field-block">
+                <h4><span class="b-ico">💰</span> الدخل الشهري الاسترشادي</h4>
+                <div class="field-income">
+                  <div class="inc-row"><small>بداية العمل بالمشروعات والجلسات</small><b>5,000 – 12,000 جنيه</b></div>
+                  <div class="inc-row"><small>مع الخبرة والتعاقدات والعملاء</small><b>15,000 – 30,000 جنيه أو أكثر</b></div>
+                  <p class="inc-note">(حوالي 90 – 538 دولار حسب المستوى)</p>
+                </div>
+              </div>
+              <div class="field-block">
+                <h4><span class="b-ico">💡</span> ليه المجال ده؟</h4>
+                <p style="color:var(--ink-soft);font-size:.87rem;line-height:2">
+                  تقدر تقدم جلسات تصوير، وتصوير منتجات للمتاجر، وتتعامل مع شركات وبراندات ومشروعات تجارية.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ 7) المونتاج وتحرير الفيديو ═══ -->
+        <div class="field-item glass reveal">
+          <button class="field-head" type="button">
+            <span class="field-logo">
+              <!-- ⬅️ لوجو المجال -->
+              <img src="IMG-20261031-WA0066.jpg" alt="لوجو المونتاج" data-fb="🎬">
+            </span>
+            <span class="field-tt">
+              <span class="num">مجال 07</span>
+              <h3>المونتاج وتحرير الفيديو</h3>
+              <small>خلي كل ثانية في الفيديو تحكي قصة</small>
+            </span>
+            <span class="field-plus">+</span>
+          </button>
+          <div class="field-body">
+            <div class="field-body-in">
+              <b class="field-slogan">خلي كل ثانية في الفيديو تحكي قصة</b>
+              <p class="field-desc">
+                الفيديو بقى من أقوى أدوات التسويق والتواصل، وكل يوم فيه شركات وصناع محتوى محتاجين
+                فيديوهات احترافية. المسار بيبدأ من الصفر وبيشمل برامج المونتاج، وتقطيع المشاهد،
+                والانتقالات والمؤثرات، وتصحيح الألوان، وتحسين الصوت، وإنتاج الإعلانات والريلز وفيديوهات يوتيوب.
+              </p>
+              <div class="field-block">
+                <h4><span class="b-ico">💼</span> فرص العمل</h4>
+                <ul><li>Video Editor</li><li>Video Content Editor</li><li>Advertising Video Editor</li><li>YouTube Video Editor</li><li>Freelance Video Editor</li></ul>
+              </div>
+              <div class="field-block">
+                <h4><span class="b-ico">💰</span> الدخل الشهري الاسترشادي</h4>
+                <div class="field-income">
+                  <div class="inc-row"><small>بداية المسار المهني</small><b>10,000 – 20,000 جنيه</b></div>
+                  <div class="inc-row"><small>مع الخبرة والتعاقدات</small><b>20,000 – 40,000 جنيه أو أكثر</b></div>
+                  <p class="inc-note">(حوالي 179 – 718 دولار حسب المستوى)</p>
+                </div>
+              </div>
+              <div class="field-block">
+                <h4><span class="b-ico">💡</span> ليه المجال ده؟</h4>
+                <p style="color:var(--ink-soft);font-size:.87rem;line-height:2">
+                  ممكن تشتغل مع صناع المحتوى والشركات ووكالات الإعلان، أو تتعامل مع عملاء من الخارج وتقدم خدماتك بالدولار.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ 8) صناعة المحتوى ═══ -->
+        <div class="field-item glass reveal">
+          <button class="field-head" type="button">
+            <span class="field-logo">
+              <!-- ⬅️ لوجو المجال -->
+              <img src="IMG-20261031-WA0066.jpg" alt="لوجو صناعة المحتوى" data-fb="✍️">
+            </span>
+            <span class="field-tt">
+              <span class="num">مجال 08</span>
+              <h3>صناعة المحتوى</h3>
+              <small>اصنع محتوى يجذب الجمهور ويبني فرصك</small>
+            </span>
+            <span class="field-plus">+</span>
+          </button>
+          <div class="field-body">
+            <div class="field-body-in">
+              <b class="field-slogan">اصنع محتوى يجذب الجمهور ويبني فرصك</b>
+              <p class="field-desc">
+                صناعة المحتوى مش مجرد تصوير فيديو ونشره، لكنها عملية متكاملة تبدأ من الفكرة وتنتهي
+                بوصول المحتوى للجمهور المناسب. المسار بيشمل ابتكار الأفكار، وكتابة السكريبتات،
+                والتصوير والتقديم، وإنتاج المحتوى، وفهم منصات التواصل، وبناء الهوية الشخصية وتحليل تفاعل الجمهور.
+              </p>
+              <div class="field-block">
+                <h4><span class="b-ico">💼</span> فرص العمل</h4>
+                <ul><li>Content Creator</li><li>Content Specialist</li><li>Social Media Content Creator</li><li>UGC Creator</li><li>Freelance Content Creator</li></ul>
+              </div>
+              <div class="field-block">
+                <h4><span class="b-ico">💰</span> الدخل الشهري الاسترشادي</h4>
+                <div class="field-income">
+                  <div class="inc-row"><small>بداية العمل المهني</small><b>8,000 – 16,000 جنيه</b></div>
+                  <div class="inc-row"><small>مع الخبرة والتعاقدات</small><b>18,000 – 35,000 جنيه أو أكثر</b></div>
+                  <p class="inc-note">(حوالي 144 – 628 دولار حسب المستوى)</p>
+                </div>
+              </div>
+              <div class="field-block">
+                <h4><span class="b-ico">💡</span> ليه المجال ده؟</h4>
+                <p style="color:var(--ink-soft);font-size:.87rem;line-height:2">
+                  ممكن تقدم محتوى للشركات، وتشتغل مع البراندات، وتبني جمهور خاص بيك،
+                  وتحقق دخل من الخدمات والتعاونات الإعلانية حسب حجم الجمهور والنتائج.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ 9) ريادة الأعمال ═══ -->
+        <div class="field-item glass reveal">
+          <button class="field-head" type="button">
+            <span class="field-logo">
+              <!-- ⬅️ لوجو المجال -->
+              <img src="IMG-20261031-WA0067.jpg" alt="لوجو ريادة الأعمال" data-fb="🚀">
+            </span>
+            <span class="field-tt">
+              <span class="num">مجال 09</span>
+              <h3>ريادة الأعمال</h3>
+              <small>متبقاش مجرد صاحب فكرة… اتعلم إزاي تبني مشروع</small>
+            </span>
+            <span class="field-plus">+</span>
+          </button>
+          <div class="field-body">
+            <div class="field-body-in">
+              <b class="field-slogan">متبقاش مجرد صاحب فكرة… اتعلم إزاي تبني مشروع</b>
+              <p class="field-desc">
+                كل مشروع ناجح بيبدأ بفكرة، لكن تحويل الفكرة لبيزنس محتاج فهم للسوق والتخطيط والإدارة والتسويق.
+                المسار بيشمل توليد الأفكار، ودراسة السوق والمنافسين، وتحديد العملاء، وإعداد نموذج العمل،
+                والتسعير وإدارة التكاليف والأرباح، والتسويق والمبيعات والقيادة والتفاوض.
+              </p>
+              <div class="field-block">
+                <h4><span class="b-ico">💼</span> فرص الاستفادة</h4>
+                <ul><li>تأسيس مشروع خاص</li><li>إدارة وتطوير المشروعات</li><li>العمل في تطوير الأعمال</li><li>إدارة فرق العمل</li><li>تحويل الأفكار إلى مشروعات قابلة للنمو</li></ul>
+              </div>
+              <div class="field-block">
+                <h4><span class="b-ico">💰</span> الدخل المتوقع</h4>
+                <p style="color:var(--ink-soft);font-size:.87rem;line-height:2">
+                  ريادة الأعمال مفيهاش مرتب ثابت؛ لأن الدخل مرتبط بنوع المشروع وحجم المبيعات والتكاليف والأرباح.
+                  نجاح المشروع ممكن يفتح مجال لعائد أكبر، لكنه مرتبط بالتخطيط والتنفيذ والمخاطرة.
+                  المهارة الحقيقية هنا إنك تعرف تدير مشروعك وتفهم أرقامه وتاخد قرارات تساعده يكبر.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ 10) اللغة الإنجليزية ═══ -->
+        <div class="field-item glass reveal">
+          <button class="field-head" type="button">
+            <span class="field-logo">
+              <!-- ⬅️ لوجو المجال -->
+              <img src="IMG-20261031-WA0068.jpg" alt="لوجو اللغة الإنجليزية" data-fb="🇬🇧">
+            </span>
+            <span class="field-tt">
+              <span class="num">مجال 10</span>
+              <h3>اللغة الإنجليزية</h3>
+              <small>لغة جديدة… وفرص مهنية أوسع</small>
+            </span>
+            <span class="field-plus">+</span>
+          </button>
+          <div class="field-body">
+            <div class="field-body-in">
+              <b class="field-slogan">لغة جديدة… وفرص مهنية أوسع</b>
+              <p class="field-desc">
+                الإنجليزية مش مجرد لغة إضافية، دي أداة بتفتح أبواب في الدراسة والعمل والتواصل مع الشركات
+                والعملاء حول العالم. المسار بيبدأ من الصفر وبيشمل القواعد والمفردات والنطق والاستماع
+                والقراءة والكتابة والمحادثة، بالإضافة إلى الإنجليزية المستخدمة في بيئة العمل والمقابلات.
+              </p>
+              <div class="field-block">
+                <h4><span class="b-ico">💼</span> فرص العمل</h4>
+                <ul><li>English Customer Service</li><li>Sales Representative</li><li>Translation بعد الوصول لمستوى احترافي</li><li>العمل مع شركات دولية</li><li>دعم العمل الحر والتعامل مع العملاء الأجانب</li></ul>
+              </div>
+              <div class="field-block">
+                <h4><span class="b-ico">💰</span> الدخل الشهري الاسترشادي (خدمة العملاء بمصر)</h4>
+                <div class="field-income">
+                  <div class="inc-row"><small>مستويات بداية إلى متوسطة</small><b>12,000 – 16,000 جنيه</b></div>
+                  <div class="inc-row"><small>مستويات متقدمة</small><b>16,000 – 25,000 جنيه أو أكثر</b></div>
+                  <p class="inc-note">(حوالي 215 – 448 دولار حسب المستوى)</p>
+                </div>
+              </div>
+              <div class="field-block">
+                <h4><span class="b-ico">💡</span> ليه المجال ده؟</h4>
+                <p style="color:var(--ink-soft);font-size:.87rem;line-height:2">
+                  والميزة الأكبر إن الإنجليزية بتضاعف فرص الاستفادة من مهارات تانية زي البرمجة والتسويق والتصميم والعمل الحر.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ 11) اللغة الإسبانية ═══ -->
+        <div class="field-item glass reveal">
+          <button class="field-head" type="button">
+            <span class="field-logo">
+              <!-- ⬅️ لوجو المجال -->
+              <img src="IMG-20261031-WA0069.jpg" alt="لوجو اللغة الإسبانية" data-fb="🇪🇸">
+            </span>
+            <span class="field-tt">
+              <span class="num">مجال 11</span>
+              <h3>اللغة الإسبانية</h3>
+              <small>افتح لنفسك أبواب سوق جديد</small>
+            </span>
+            <span class="field-plus">+</span>
+          </button>
+          <div class="field-body">
+            <div class="field-body-in">
+              <b class="field-slogan">افتح لنفسك أبواب سوق جديد</b>
+              <p class="field-desc">
+                الإسبانية من اللغات واسعة الانتشار، وإتقانها ممكن يضيف ميزة قوية في سوق العمل،
+                خصوصًا في الشركات اللي بتتعامل مع إسبانيا وأمريكا اللاتينية. المسار بيبدأ من الصفر،
+                وبيشمل القواعد والمفردات والنطق والاستماع والقراءة والكتابة والمحادثة والتواصل المهني.
+              </p>
+              <div class="field-block">
+                <h4><span class="b-ico">💼</span> فرص العمل</h4>
+                <ul><li>Spanish Customer Service</li><li>Spanish Sales Representative</li><li>Translation بعد إتقان اللغة</li><li>العمل في السياحة والضيافة</li><li>التعامل مع الشركات والأسواق الناطقة بالإسبانية</li></ul>
+              </div>
+              <div class="field-block">
+                <h4><span class="b-ico">💰</span> الدخل الشهري الاسترشادي (خدمة العملاء بمصر)</h4>
+                <div class="field-income">
+                  <div class="inc-row"><small>مستويات بداية إلى متوسطة</small><b>18,000 – 23,000 جنيه</b></div>
+                  <div class="inc-row"><small>مستويات متقدمة</small><b>24,000 – 37,000 جنيه أو أكثر</b></div>
+                  <p class="inc-note">(حوالي 323 – 664 دولار حسب المستوى)</p>
+                </div>
+              </div>
+              <div class="field-block">
+                <h4><span class="b-ico">💡</span> ليه المجال ده؟</h4>
+                <p style="color:var(--ink-soft);font-size:.87rem;line-height:2">
+                  إتقان لغة إضافية ممكن يكون نقطة تميز قوية في التقديم على وظائف محلية ودولية.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ 12) اللغة الألمانية ═══ -->
+        <div class="field-item glass reveal">
+          <button class="field-head" type="button">
+            <span class="field-logo">
+              <!-- ⬅️ لوجو المجال -->
+              <img src="IMG-20261031-WA0070.jpg" alt="لوجو اللغة الألمانية" data-fb="🇩🇪">
+            </span>
+            <span class="field-tt">
+              <span class="num">مجال 12</span>
+              <h3>اللغة الألمانية</h3>
+              <small>استثمر في لغة تفتح لك فرصًا مهنية مميزة</small>
+            </span>
+            <span class="field-plus">+</span>
+          </button>
+          <div class="field-body">
+            <div class="field-body-in">
+              <b class="field-slogan">استثمر في لغة تفتح لك فرصًا مهنية مميزة</b>
+              <p class="field-desc">
+                الألمانية من اللغات المهمة في مجالات الأعمال والدراسة والتواصل الدولي، وبتوفر فرصًا
+                في شركات بتخدم عملاء ناطقين باللغة الألمانية. المسار بيبدأ من الصفر، وبيشمل القواعد
+                والمفردات والنطق والاستماع والقراءة والكتابة والمحادثة، مع تطوير اللغة للاستخدام اليومي والمهني.
+              </p>
+              <div class="field-block">
+                <h4><span class="b-ico">💼</span> فرص العمل</h4>
+                <ul><li>German Customer Service</li><li>German Sales Representative</li><li>Translation بعد الوصول لمستوى احترافي</li><li>العمل في السياحة والضيافة</li><li>فرص في الشركات الدولية</li></ul>
+              </div>
+              <div class="field-block">
+                <h4><span class="b-ico">💰</span> الدخل الشهري الاسترشادي (خدمة العملاء بمصر)</h4>
+                <div class="field-income">
+                  <div class="inc-row"><small>مستويات بداية إلى متوسطة</small><b>30,000 – 38,000 جنيه</b></div>
+                  <div class="inc-row"><small>مستويات متقدمة</small><b>38,000 – 53,000 جنيه أو أكثر</b></div>
+                  <p class="inc-note">(حوالي 538 – 951 دولار حسب المستوى)</p>
+                </div>
+              </div>
+              <div class="field-block">
+                <h4><span class="b-ico">💡</span> ليه المجال ده؟</h4>
+                <p style="color:var(--ink-soft);font-size:.87rem;line-height:2">
+                  اللغة الألمانية مع مستوى قوي في المحادثة والتواصل ممكن تكون بوابة لفرص مهنية مميزة.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- تنويه الدخل -->
+      <div class="disclaimer glass reveal">
+        ⚠️ <b>تنويه الدخل:</b> هذا ارقام حقيقه و يزيد اراتب لي الخبره و اتفوق في المجالات يتم اتوفق في المجالات لي الارباح اكثر هذا منصة مهارات المستقبل توصلك لي التفوق في اي مجال بشهادة معتمده من شركة بلان بي شهايد معتمده و تاهلك لي اشغل ارجاء اتعامل معنا علي هذا الارقام الخاصه بينا اي خطاء انا غير مسئول شكرا لي تفهمكم  
+      </div>
+
+    </div>
+  </section>
+
+  <!-- إيه اللي بيخلي المسار متكامل -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="pill">الباقة المتكاملة</span>
+        <h2>إيه اللي بيخلي المسار <span class="grad-text">متكامل؟</span></h2>
+        <p>المهارة الأساسية هي البداية، لكن الاستعداد الحقيقي لسوق العمل محتاج مجموعة مهارات إضافية.</p>
+      </div>
+
+      <div class="path-grid">
+        <div class="path-card glass lift reveal"><div class="p-ico">🎯</div><h4>1. التخصص الأساسي</h4><p>محتوى تدريبي يبدأ من الأساسيات ويتدرج في المهارات والتطبيق.</p></div>
+        <div class="path-card glass lift reveal"><div class="p-ico">🤝</div><h4>2. السوفت سكيلز</h4><p>التواصل، والثقة بالنفس، وإدارة الوقت، والعمل الجماعي، وحل المشكلات.</p></div>
+        <div class="path-card glass lift reveal"><div class="p-ico">🤖</div><h4>3. الذكاء الاصطناعي</h4><p>التعرف على أدوات الذكاء الاصطناعي واستخدامها في تطوير الأداء والإنتاجية.</p></div>
+        <div class="path-card glass lift reveal"><div class="p-ico">💼</div><h4>4. الفري لانسنج</h4><p>فهم سوق العمل الحر، وتجهيز الخدمات، والتعامل مع العملاء.</p></div>
+        <div class="path-card glass lift reveal"><div class="p-ico">🔗</div><h4>5. لينكد إن</h4><p>بناء حساب احترافي يساعد في عرض المهارات والتواصل مع أصحاب الأعمال.</p></div>
+        <div class="path-card glass lift reveal"><div class="p-ico">🗂️</div><h4>6. البورتفوليو</h4><p>تجميع نماذج الأعمال والمشروعات العملية لإظهار المستوى المهني.</p></div>
+        <div class="path-card glass lift reveal"><div class="p-ico">🎓</div><h4>7. التأهيل لسوق العمل</h4><p>فهم متطلبات الوظائف والاستعداد للتقديم والمقابلات.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="wrap sec-tight">
+    <div class="cta-band glass glass-strong reveal">
+      <span class="pill"><i class="dot"></i> البداية الصح تبدأ النهارده</span>
+      <h2 style="margin-top:16px">مستقبلك مش لازم يستنى… <span class="grad-text">ابدأ ببناء مهارتك</span></h2>
+      <p>
+        مش مطلوب تكون خبير علشان تبدأ، ومش مطلوب تكون عندك خبرة سابقة. البداية الصح هي اختيار المجال المناسب،
+        والتعلم المستمر، والتطبيق العملي، وبناء خبرة حقيقية خطوة بخطوة. اختار المجال اللي يناسب طموحك،
+        واسأل عن تفاصيل المسار التدريبي وطريقة البداية.
+      </p>
+      <a href="https://wa.me/201110229830" target="_blank" rel="noopener" class="btn btn-p">
+        💬 تفصيل اكتر عبر واتساب 
+      </a>
+      <p style="margin-top:18px;color:var(--muted);font-size:.86rem">
+        مهارتك القادمة ممكن تكون بداية فرصة جديدة في حياتك المهنية.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     صفحة البرمجة (مهندسك: 01110229830)
+     ============================================================ -->
+<main id="p-programming" class="page">
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="pill">💻 قسم تصميم وتطوير المواقع</span>
+        <h2>مواقع وأنظمة <span class="grad-text">بتفرق</span> في شغلك</h2>
+        <p>بننفذ مشروعك بأحدث التقنيات، بسرعة تحميل عالية، وبكود نضيف قابل للتطوير.</p>
+      </div>
+
+      <div class="grid g3">
+        <article class="card glass lift reveal"><div class="ico ico-c">🏢</div><h3>مواقع الشركات</h3><p>موقع احترافي يمثل براندك ويرفع ثقة عملائك من أول ثانية.</p></article>
+        <article class="card glass lift reveal"><div class="ico ico-c">🛒</div><h3>المتاجر الإلكترونية</h3><p>متجر كامل بوسائل دفع وإدارة منتجات وطلبات وتقارير.</p></article>
+        <article class="card glass lift reveal"><div class="ico ico-c">⚙️</div><h3>أنظمة الإدارة</h3><p>أنظمة مخصصة: مخزون، حجز، فواتير، ولوحات تحكم.</p></article>
+        <article class="card glass lift reveal"><div class="ico ico-v">📱</div><h3>تصميم UI/UX</h3><p>واجهات مريحة وسريعة، مبنية على تجربة مستخدم حقيقية.</p></article>
+        <article class="card glass lift reveal"><div class="ico ico-v">⚡</div><h3>تحسين السرعة</h3><p>تقليل زمن التحميل ورفع نقاط Core Web Vitals.</p></article>
+        <article class="card glass lift reveal"><div class="ico ico-v">🔐</div><h3>الأمان والصيانة</h3><p>تأمين الموقع، نسخ احتياطي، وتحديثات دورية.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="profile glass glass-strong reveal">
+        <div class="avatar c">𝑬𝒏𝒈</div>
+        <div>
+          <div class="role">👨‍💻 مهندس تصميم وتطوير المواقع المسؤول</div>
+          <h3>𝑬𝒏𝒈 | 𝒏𝒂𝒅𝒆𝒓 𝒌𝒂𝒔𝒔𝒆𝒎</h3>
+          <p>
+            متخصص في تصميم وتطوير المواقع والمتاجر الإلكترونية وواجهات الاستخدام.
+            بيشتغل على بناء مواقع سريعة وآمنة وقابلة للتوسّع، وبيتابع المشروع من
+            الفكرة لحد ما يطلع على النت ويشتغل بكفاءة.
+          </p>
+          <div class="tags-row">
+            <span>HTML / CSS</span><span>JavaScript</span><span>React</span>
+            <span>UI / UX</span><span>متاجر إلكترونية</span><span>SEO تقني</span>
+          </div>
+          <div class="eng-slot" style="margin-top:18px">
+            <!-- ⬅️ صورة المهندس -->
+            <span class="eng-photo"><img src="IMG-20261030-WA0036.jpg" alt="صورة المهندس" data-fb="👨‍💻"></span>
+            <div>
+              <small>للتواصل مباشر</small>
+              <span>📞 <a href="https://wa.me/201110229830" target="_blank" rel="noopener" style="color:var(--ok)">واتساب: 01110229830</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap sec-tight" style="text-align:center">
+    <a href="#/contact" data-link data-dept="web" class="btn btn-p reveal"> اطلب مشروعك الان</a>
+  </section>
+</main>
+
+<!-- ============================================================
+     صفحة الجرافيك
+     ============================================================ -->
+<main id="p-design" class="page">
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="pill">🎨 قسم الجرافيك</span>
+        <h2>تصميم بيعبّر <span class="grad-text">قبل ما يزيّن</span></h2>
+        <p>من اللوجو للهوية الكاملة لتصاميم السوشيال — شغل بيلفت النظر ويرفع قيمة البراند.</p>
+      </div>
+
+      <div class="grid g3">
+        <article class="card glass lift reveal"><div class="ico ico-v">🎯</div><h3>الهوية البصرية</h3><p>لوجو وألوان وخطوط ودليل هوية كامل يخلي براندك متسق في كل مكان.</p></article>
+        <article class="card glass lift reveal"><div class="ico ico-v">📱</div><h3>تصاميم السوشيال ميديا</h3><p>بوستات وإعلانات بتصميم بيوقف السكرول وبيجيب تفاعل حقيقي.</p></article>
+        <article class="card glass lift reveal"><div class="ico ico-v">🖨️</div><h3>مطبوعات وبنرات</h3><p>فلايرات وبنرات ورول أب بجودة طباعة عالية وجاهزة للمطبعة.</p></article>
+        <article class="card glass lift reveal"><div class="ico ico-p">🧩</div><h3>تصميم واجهات</h3><p>واجهات مواقع وتطبيقات على Figma قابلة للتسليم للمبرمج مباشرة.</p></article>
+        <article class="card glass lift reveal"><div class="ico ico-p">🎬</div><h3>موشن جرافيك</h3><p>فيديوهات قصيرة وإعلانات متحركة بتوصل الرسالة في ثواني.</p></article>
+        <article class="card glass lift reveal"><div class="ico ico-p">📦</div><h3>تصميم المنتجات</h3><p>باكدجينج ومطبوعات المنتج بشكل يخلي العميل يمسكها من الرف.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="profile glass glass-strong reveal">
+        <div class="avatar">𝑬𝒏𝒈</div>
+        <div>
+          <div class="role">🎨 مهندس الجرافيك المسؤول</div>
+          <h3>𝑬𝒏𝒈 | 𝒎𝒐𝒉𝒂𝒎𝒆𝒅</h3>
+          <p>
+            متخصص في تصميم الهوية البصرية والتصاميم الإعلانية، وشغله قائم على مبدأ
+            إن التصميم لازم يبيع مش بس يزين. بيقدّم هوية متكاملة من اللوجو
+            لحد دليل الألوان والخطوط وتطبيقات الهوية على السوشيال والمطبوعات.
+          </p>
+          <div class="tags-row">
+            <span>Photoshop</span><span>Illustrator</span><span>Figma</span>
+            <span>Brand Identity</span><span>Social Design</span>
+          </div>
+          <div class="eng-slot" style="margin-top:18px">
+            <!-- ⬅️ صورة المهندس: src="team/graphic.jpg" -->
+            <span class="eng-photo"><img src="IMG-20261101-WA0025.jpg" alt="صورة المهندس" data-fb="👨‍🎨"></span>
+            <div><small>للتواصل مباشر</small><span>+201024408468</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap sec-tight" style="text-align:center">
+    <a href="#/contact" data-link data-dept="graphic" class="btn btn-p reveal">اطلب تصميم الان</a>
+  </section>
+</main>
+
+<!-- ============================================================
+     صفحة التسويق
+     ============================================================ -->
+<main id="p-marketing" class="page">
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="pill">📈 قسم التسويق</span>
+        <h2>تسويق بيحوّل المتابع <span class="grad-text">لعميل بيدفع</span></h2>
+        <p>حملات ممولة مبنية على بيانات، ومحتوى بيوصل لجمهورك الحقيقي مش لأي حد.</p>
+      </div>
+
+      <div class="grid g3">
+        <article class="card glass lift reveal"><div class="ico ico-g">💰</div><h3>الحملات الممولة</h3><p>إعلانات فيسبوك وإنستجرام وجوجل بعائد استثمار قابل للقياس.</p></article>
+        <article class="card glass lift reveal"><div class="ico ico-g">📊</div><h3>إدارة الصفحات</h3><p>خطة محتوى شهرية وتفاعل مع الجمهور وتقارير واضحة.</p></article>
+        <article class="card glass lift reveal"><div class="ico ico-g">🔍</div><h3>تحسين محركات البحث</h3><p>ظهور في نتائج جوجل الأولى بجهد مستمر ومستهدف.</p></article>
+        <article class="card glass lift reveal"><div class="ico ico-c">✍️</div><h3>كتابة المحتوى</h3><p>محتوى بيبيع بلغة عميلك وبأسلوب يبني الثقة.</p></article>
+        <article class="card glass lift reveal"><div class="ico ico-c">🎯</div><h3>استراتيجية النمو</h3><p>خطة نمو شاملة مبنية على تحليل السوق والمنافسين.</p></article>
+        <article class="card glass lift reveal"><div class="ico ico-c">📩</div><h3>قمع المبيعات</h3><p>بناء رحلة عميل كاملة من الإعلان لحد الشراء.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="profile glass glass-strong reveal">
+        <div class="avatar g">𝑬𝒏𝒈</div>
+        <div>
+          <div class="role">📈 مهندس التسويق المسؤول</div>
+          <h3>𝑬𝒏𝒈 | 𝒎𝒐𝒉𝒂𝒎𝒆𝒅 𝒌𝒂𝒎𝒂𝒍</h3>
+          <p>
+            متخصص في الحملات الممولة واستراتيجيات النمو الرقمي. بيبني خطة تسويق
+            بالأرقام: من تحديد الجمهور وتوزيع الميزانية لحد قراءة النتائج وتحسينها
+            أسبوع بأسبوع، مع تقارير واضحة توضح كل جنيه راح فين ورجّع كام.
+          </p>
+          <div class="tags-row">
+            <span>Meta Ads</span><span>Google Ads</span><span>SEO</span>
+            <span>Content Marketing</span><span>Analytics</span>
+          </div>
+          <div class="eng-slot" style="margin-top:18px">
+            <!-- ⬅️ صورة المهندس: src="team/marketing.jpg" -->
+            <span class="eng-photo"><img src="IMG-20261101-WA0023.jpg" alt="صورة المهندس" data-fb="👨‍💼"></span>
+            <div><small>للتواصل مباشر</small><span>+201065130196</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap sec-tight" style="text-align:center">
+    <a href="#/contact" data-link data-dept="marketing" class="btn btn-p reveal"> اطلب خطة تسويق الان</a>
+  </section>
+</main>
+
+<!-- ============================================================
+     صفحة التواصل
+     ============================================================ -->
+<main id="p-contact" class="page">
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="pill"><i class="dot"></i> بنرد خلال 24 ساعة</span>
+        <h2>احنا جاهزين <span class="grad-text">نسمع طلبك</span></h2>
+        <p>اكتب طلبك واختار القسم، وهيتواصل معاك المهندس المسؤول مباشرة.</p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="info-box glass reveal">
+          <div class="i-item">
+            <div class="ic">📞</div>
+            <div><small>اتصال / واتساب</small><span dir="ltr"><a href="https://wa.me/201110229830" target="_blank" rel="noopener" style="color:var(--ok)">+201110229830</a></span></div>
+          </div>
+          <div class="i-item">
+            <div class="ic">✉️</div>
+            <div><small>البريد الإلكتروني</small><span dir="ltr">info@future_skills.com</span></div>
+          </div>
+          <div class="i-item">
+            <div class="ic">📍</div>
+            <div><small>الموقع</small><span>دمنهور — مصر</span></div>
+          </div>
+          <div class="i-item">
+            <div class="ic">⏰</div>
+            <div><small>مواعيد الرد</small><span>يوميًا من 10 ص — 10 م</span></div>
+          </div>
+
+          <div class="tags-row" style="margin-top:6px">
+            <span>رد سريع</span><span>عقد واضح</span><span>دفع على مراحل</span>
+          </div>
+        </div>
+
+        <form class="form-box glass reveal" id="leadForm" novalidate>
+          <label for="fName">الاسم الكامل</label>
+          <input class="field" type="text" id="fName" name="name" placeholder="اكتب اسمك" required>
+
+          <label for="fPhone">رقم الموبايل / واتساب</label>
+          <input class="field" type="tel" id="fPhone" name="phone" placeholder="01xxxxxxxxx" required>
+
+          <label for="fDept">القسم المطلوب</label>
+          <select class="field" id="fDept" name="dept">
+          
+            
+              
+                
+                  
+       
+    <option value="">اختار القسم…</option>
+    
+
+    <!-- مجالات الشغل والخدمات (أول 3 مجالات) -->
+    <option value="web">💻 تصميم و تطوير المواقع</option>
+    <option value="graphic">🎨 الجرافيك ديزاين</option>
+    <option value="marketing">📈 التسويق الإلكتروني</option>
+
+    <!-- مجالات الكورسات (10 مجالات) -->
+    <option value="course-web">🎓 كورس برمجة المواقع</option>
+    <option value="course-apps">🎓 كورس برمجة التطبيقات</option>
+    <option value="course-graphic">🎓 كورس الجرافيك ديزاين</option>
+    <option value="course-marketing">🎓 كورس التسويق الإلكتروني والإعلانات الممولة</option>
+    <option value="course-media">🎓 كورس التصوير والمونتاج وصناعة المحتوى</option>
+    <option value="course-business">🎓 كورس ريادة الأعمال</option>
+    <option value="course-english">🎓 كورس اللغة الإنجليزية</option>
+    <option value="course-spanish">🎓 كورس اللغة الإسبانية</option>
+    <option value="course-german">🎓 كورس اللغة الألمانية</option>
+    <option value="course-webdev">🎓 كورس تطوير الويب</option>
+</select>
+             
+
+
+
+
+
+          <label for="fMsg">تفاصيل الطلب</label>
+          <textarea class="field" id="fMsg" name="message" placeholder="اكتب طلبك بالتفصيل…"></textarea>
+
+          <button class="btn btn-p btn-block" type="submit" style="margin-top:20px"> إرسال الطلب</button>
+          <div class="form-msg" id="formMsg" role="status" aria-live="polite"></div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- الفوتر -->
+<footer>
+  <div class="wrap">
+    <div class="f-in">
+      <div>
+        <div class="f-brand">
+          <span class="mark" style="width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:var(--grad-1);font-size:.95rem;color:#fff;border:1px solid rgba(255,255,255,.4)">F</span>
+          <span>Future Skills <span class="grad-text">| مهارات المستقبل</span></span>
+        </div>
+        <p>استوديو رقمي متكامل للكورسات والبرمجة والجرافيك والتسويق. خطتك البديلة نحو مستقبل أحسن.</p>
+      </div>
+
+      <div>
+        <h5>الأقسام</h5>
+        <a href="#/courses" data-link>🎓 الكورسات</a>
+        <a href="#/fields" data-link>🚀 المجالات المهنية</a>
+        <a href="#/programming" data-link>💻 البرمجة</a>
+        <a href="#/design" data-link>🎨 الجرافيك</a>
+        <a href="#/marketing" data-link>📈 التسويق</a>
+      </div>
+
+      <div>
+        <h5>روابط</h5>
+        <a href="#/home" data-link>الرئيسية</a>
+        <a href="#/contact" data-link>تواصل معنا</a>
+        <a href="#/courses" data-link>الكورسات</a>
+      </div>
+
+      <div>
+        <h5>تواصل</h5>
+        <a href="tel:+201110229830" dir="ltr">📞 +201110229830</a>
+         <a href="tel:+201065130196" dir="ltr">📞 +201065130196</a>
+         <a href="tel:+201024408468" dir="ltr">📞 +201024408468</a>
+        
+        
+        
+        <a href="mailto:info@future_skills.com" dir="ltr">✉️ info@future_skills.com</a>
+        <p>اسكندريه — مصر</p>
+      </div>
+    </div>
+  </div>
+  <div class="copy">© <span id="year">2026</span> <b>Future Skills – مهارات المستقبل</b> — كل الحقوق محفوظة.</div>
+</footer>
+
+<!-- عناصر عائمة -->
+<a class="wa" href="https://wa.me/201110229830" target="_blank" rel="noopener" title="كلمنا على واتساب" aria-label="واتساب">💬</a>
+<button class="to-top" id="toTop" title="للأعلى" aria-label="الرجوع للأعلى">↑</button>
+
+<script>
+/* ==========================================================================
+   Future Skills APP SCRIPT v3.0
+   1) راوتر الصفحات
+   2) قائمة الموبايل
+   3) الظهور عند التمرير
+   4) عدادات الأرقام
+   5) الأسئلة الشائعة
+   6) الفورم
+   7) شريط التقدم + للأعلى + نافبار
+   8) لمعة الماوس
+   9) ماركي
+   10) أكورديون المجالات المهنية
+   11) Fallback اللوجوهات والصور
+   ========================================================================== */
+
+(() => {
+  'use strict';
+
+  /* ---------- 1) راوتر ---------- */
+  const PAGES = ['home','courses','fields','programming','design','marketing','contact'];
+  const navLinks = document.getElementById('navLinks');
+  const burger   = document.getElementById('burger');
+
+  function currentPage(){
+    const raw = (location.hash.replace('#/','') || 'home').split('?')[0];
+    return PAGES.includes(raw) ? raw : 'home';
+  }
+
+  function router(){
+    const name = currentPage();
+
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('on'));
+    const target = document.getElementById('p-' + name);
+    if (target) target.classList.add('on');
+
+    document.querySelectorAll('.nav-links a[data-page]').forEach(a => {
+      a.classList.toggle('on', a.dataset.page === name);
+    });
+
+    closeMenu();
+    window.scrollTo({ top:0, behavior:'instant' in document.documentElement.style ? 'instant' : 'auto' });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight) {
+        el.classList.add('in');
+      } else {
+        io.observe(el);
+      }
+    });
+  }
+
+  /* ---------- 2) قائمة الموبايل ---------- */
+  function closeMenu(){
+    navLinks.classList.remove('open');
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');
+  }
+
+  burger.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!navLinks.contains(e.target) && !burger.contains(e.target)) closeMenu();
+
+    const trigger = e.target.closest('[data-dept]');
+    if (trigger) {
+      const val = trigger.dataset.dept;
+      sessionStorage.setItem('pb_dept', val);
+      setTimeout(() => {
+        const sel = document.getElementById('fDept');
+        if (sel && val) sel.value = val;
+      }, 260);
+    }
+  });
+
+  /* ---------- 3) الظهور ---------- */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* ---------- 4) العدادات ---------- */
+  const counterIO = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting || entry.target.dataset.done) return;
+      entry.target.dataset.done = '1';
+
+      const end    = Number(entry.target.dataset.count || 0);
+      const suffix = entry.target.dataset.suffix || '';
+      const dur    = 1500;
+      let start    = null;
+
+      const tick = (t) => {
+        if (start === null) start = t;
+        const p = Math.min((t - start) / dur, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        entry.target.textContent = Math.floor(end * eased).toLocaleString('en-US') + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+  }, { threshold: .55 });
+
+  document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+
+  /* ---------- 5) الأسئلة الشائعة ---------- */
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    if (!q || !a) return;
+
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+
+      item.parentElement.querySelectorAll('.faq-item.open').forEach(other => {
+        if (other !== item) {
+          other.classList.remove('open');
+          other.querySelector('.faq-a').style.maxHeight = null;
+        }
+      });
+
+      item.classList.toggle('open', !isOpen);
+      a.style.maxHeight = !isOpen ? a.scrollHeight + 'px' : null;
+    });
+  });
+
+
+
+
+
+
+
+  /* ---------- 6) الفورم (توجيه الشغل للمهندسين والكورسات لرقمك) ---------- */
+  const form = document.getElementById('leadForm');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name  = form.querySelector('#fName').value.trim();
+      const phone = form.querySelector('#fPhone').value.trim();
+      const deptSelect = form.querySelector('#fDept');
+      const dept  = deptSelect.value;
+      const deptText = deptSelect.options[deptSelect.selectedIndex]?.text || '';
+      const msg   = form.querySelector('#fMsg').value.trim();
+      const msgEl = document.getElementById('formMsg');
+
+      const phoneOk = /^(\+?\d{1,35}|0\d{9,14})$/.test(phone.replace(/[\s-]/g,''));
+
+      if (!name) {
+        msgEl.className = 'form-msg err';
+        msgEl.textContent = '⚠️ من فضلك اكتب اسمك.';
+        form.querySelector('#fName').focus();
+        return;
+      }
+      if (!phoneOk) {
+        msgEl.className = 'form-msg err';
+        msgEl.textContent = '⚠️ من فضلك اكتب رقم موبايل صحيح.';
+        form.querySelector('#fPhone').focus();
+        return;
+      }
+      if (!dept) {
+        msgEl.className = 'form-msg err';
+        msgEl.textContent = '⚠️ اختار القسم المطلوب.';
+        deptSelect.focus();
+        return;
+      }
+
+      // تحديد رقم الواتساب بناءً على نوع الطلب (شغل أو كورس)
+      let targetNumber = '201110229830'; // الرقم الأساسي للكورسات ولأي طلب عام
+
+      // لو طلب "شغل" (مش كورس)، بنوجهه لرقم المهندس المتخصص
+      if (!dept.startsWith('course-')) {
+        if (dept === 'graphic' || deptText.includes('جرافيك')) {
+          targetNumber = '201024408468'; // رقم مهندس الجرافيك (محمد مديح)
+        } else if (dept === 'marketing' || deptText.includes('تسويق')) {
+          targetNumber = '201065130196'; // رقم مهندس التسويق (محمد كمال)
+        } else if (dept === 'web' || deptText.includes('تطوير') || deptText.includes('برمجة')) {
+          targetNumber = '201110229830'; // رقم مهندس البرمجة والمواقع (نادر قاسم)
+        }
+      }
+
+      // تجهيز نص الرسالة
+      const whatsappMessage = `السلام عليكم، أرغب في طلب خدمة/كورس:%0A` +
+        `👤 الاسم: ${name}%0A` +
+        `📱 رقم الهاتف: ${phone}%0A` +
+        `📌 القسم: ${deptText}%0A` +
+        `💬 التفاصيل: ${msg ? msg : 'لا توجد تفاصيل إضافية'}`;
+
+      const whatsappUrl = `https://wa.me/${targetNumber}?text=${whatsappMessage}`;
+      
+      msgEl.className = 'form-msg ok';
+      msgEl.textContent = '✅ جاري تحويلك إلى الواتساب لإرسال الطلب...';
+
+      setTimeout(() => {
+        window.open(whatsappUrl, '_blank');
+      }, 600);
+    });
+
+    const saved = sessionStorage.getItem('pb_dept');
+    if (saved) {
+      const sel = document.getElementById('fDept');
+      if (sel) sel.value = saved;
+    }
+  }
+
+
+
+
+
+
+
+  /* ---------- 7) شريط التقدم + للأعلى + نافبار ---------- */
+  const prog  = document.getElementById('prog');
+  const nav   = document.getElementById('nav');
+  const toTop = document.getElementById('toTop');
+
+  const onScroll = () => {
+    const h = document.documentElement;
+    const max = h.scrollHeight - h.clientHeight;
+    const pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
+
+    if (prog) prog.style.width = pct + '%';
+    if (nav) nav.classList.toggle('stuck', h.scrollTop > 24);
+    if (toTop) toTop.classList.toggle('on', h.scrollTop > 500);
+  };
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(() => {
+        onScroll();
+        ticking = false;
+      });
+    }
+  }, { passive: true });
+  onScroll();
+
+  /* ---------- 8) لمعة الماوس ---------- */
+  const glow = document.getElementById('glow');
+  if (glow && matchMedia('(pointer:fine)').matches) {
+    document.body.classList.add('has-pointer');
+    document.addEventListener('mousemove', (e) => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top  = e.clientY + 'px';
+    }, { passive: true });
+  }
+
+  /* ---------- 9) ماركي ---------- */
+  const marq = document.getElementById('marq');
+  if (marq) marq.innerHTML += marq.innerHTML;
+
+  /* ---------- 10) أكورديون المجالات المهنية ---------- */
+  document.querySelectorAll('.field-item').forEach(item => {
+    const head = item.querySelector('.field-head');
+    const body = item.querySelector('.field-body');
+    if (!head || !body) return;
+
+    head.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+
+      // قفل باقي المجالات (واحد مفتوح بس)
+      document.querySelectorAll('.field-item.open').forEach(other => {
+        if (other !== item) {
+          other.classList.remove('open');
+          other.querySelector('.field-body').style.maxHeight = null;
+        }
+      });
+
+      item.classList.toggle('open', !isOpen);
+      body.style.maxHeight = !isOpen ? body.scrollHeight + 'px' : null;
+    });
+  });
+
+  /* ---------- 11) Fallback اللوجوهات والصور ---------- */
+  document.querySelectorAll('img[data-fb]').forEach(img => {
+    img.addEventListener('error', () => {
+      const fb = document.createElement('span');
+      fb.className = 'logo-fb';
+      fb.textContent = img.dataset.fb;
+      img.replaceWith(fb);
+    });
+  });
+
+  /* ---------- إضافات عامة ---------- */
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  window.addEventListener('hashchange', router);
+  router();
+})();
+</script>
+</body>
+</html>
