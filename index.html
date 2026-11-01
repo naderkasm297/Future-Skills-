@@ -272,69 +272,74 @@ ul{list-style:none}
 .tag-g{background:rgba(255,194,71,.16);border-color:rgba(255,194,71,.46);color:#ffe3a6}
 .tag-ok{background:rgba(46,230,168,.16);border-color:rgba(46,230,168,.44);color:#a9ffe2}
 
-/* ---------- 08) النافبار ---------- */
+/* ---------- 08) النافبار (تم تعديل شريط العرض والنافبار ليصبح احترافياً وغير عريض) ---------- */
 .topbar{
-  position:relative;z-index:90;text-align:center;font-size:.83rem;font-weight:800;
-  padding:9px 16px;color:#fff;
+  position:relative;z-index:90;text-align:center;font-size:.78rem;font-weight:800;
+  padding:6px 12px;color:#fff; max-width:85%; margin:8px auto; border-radius:12px;
   background:linear-gradient(90deg,#8b5cff,#ff2e88 45%,#ffc247 90%);
   background-size:220% 100%;animation:pan 12s linear infinite;letter-spacing:.2px;
+  box-shadow:0 8px 24px -10px rgba(255,46,136,.6);
 }
-.topbar b{color:#1a0b2e;background:#fff;padding:1px 8px;border-radius:6px}
-.nav{position:sticky;top:0;z-index:80;padding-block:12px}
+.topbar b{color:#1a0b2e;background:#fff;padding:1px 6px;border-radius:4px}
+.nav{position:sticky;top:0;z-index:80;padding-block:8px}
 .nav-in{
-  display:flex;align-items:center;gap:16px;padding:10px 12px;border-radius:20px;
+  display:flex;align-items:center;justify-content:space-between;
+  width:100%;max-width:100%;gap:6px;padding:8px 14px;border-radius:18px;
   border:1px solid rgba(255,255,255,.12);
   background:linear-gradient(160deg,rgba(255,255,255,.1),rgba(255,255,255,.03));
   backdrop-filter:blur(26px) saturate(190%);-webkit-backdrop-filter:blur(26px) saturate(190%);
-  box-shadow:0 22px 50px -30px rgba(0,0,0,1), inset 0 1px 0 rgba(255,255,255,.24);
+  box-shadow:0 16px 36px -24px rgba(0,0,0,1), inset 0 1px 0 rgba(255,255,255,.24);
   transition:.4s var(--ease);
 }
 .nav.stuck .nav-in{
   background:linear-gradient(160deg,rgba(10,14,32,.82),rgba(7,10,26,.66));
   border-color:rgba(255,255,255,.18);
-  box-shadow:0 26px 60px -28px rgba(0,0,0,1), inset 0 1px 0 rgba(255,255,255,.18);
+  box-shadow:0 20px 44px -24px rgba(0,0,0,1), inset 0 1px 0 rgba(255,255,255,.18);
 }
-.logo{display:flex;align-items:center;gap:11px;font-weight:900;font-size:1.18rem;white-space:nowrap}
+.logo{
+  display:flex;align-items:center;gap:6px;font-weight:900;
+  font-size:0.88rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
 .logo .mark{
-  width:44px;height:44px;border-radius:14px;display:grid;place-items:center;
-  font-size:1.15rem;font-weight:900;color:#fff;
+  width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+  font-size:0.95rem;font-weight:900;color:#fff;
   background:var(--grad-1);background-size:200% 200%;
   border:1px solid rgba(255,255,255,.45);
-  box-shadow:0 14px 30px -14px rgba(255,46,136,.95),0 0 26px -6px rgba(139,92,255,.7),inset 0 1px 0 rgba(255,255,255,.5);
+  box-shadow:0 10px 22px -10px rgba(255,46,136,.95),inset 0 1px 0 rgba(255,255,255,.5);
   animation:pan 8s linear infinite;flex-shrink:0;
 }
 .logo span.grad-text{font-weight:900}
-.nav-links{display:flex;align-items:center;gap:5px;margin-inline:auto}
+.nav-links{display:flex;align-items:center;gap:4px;margin-inline:auto}
 .nav-links a{
-  display:block;padding:10px 16px;border-radius:12px;
-  font-size:.92rem;font-weight:800;color:var(--ink-soft);
+  display:block;padding:8px 12px;border-radius:10px;
+  font-size:.86rem;font-weight:800;color:var(--ink-soft);
   border:1px solid transparent;transition:.3s var(--ease);
 }
 .nav-links a:hover{
   color:#fff;background:rgba(255,255,255,.1);
   border-color:rgba(255,255,255,.18);
-  box-shadow:0 0 24px -8px rgba(0,229,255,.4);
+  box-shadow:0 0 20px -8px rgba(0,229,255,.4);
 }
 .nav-links a.on{
   color:#fff;
   background:linear-gradient(160deg,rgba(139,92,255,.55),rgba(255,46,136,.36));
   border-color:rgba(255,255,255,.35);
-  box-shadow:0 12px 28px -14px rgba(139,92,255,1),0 0 30px -8px rgba(255,46,136,.5),inset 0 1px 0 rgba(255,255,255,.4);
+  box-shadow:0 10px 22px -12px rgba(139,92,255,1),inset 0 1px 0 rgba(255,255,255,.4);
 }
 .nav-cta{flex-shrink:0}
 .burger{
-  display:none;width:46px;height:46px;border-radius:14px;
+  display:none;width:38px;height:38px;border-radius:10px;
   border:1px solid var(--glass-stroke);background:rgba(255,255,255,.08);
   backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  place-items:center;gap:5px;flex-direction:column;
+  place-items:center;gap:3px;flex-direction:column;flex-shrink:0;
 }
-.burger i{display:block;width:20px;height:2px;border-radius:2px;background:linear-gradient(90deg,#fff,#d3c6ff);transition:.35s var(--ease)}
-.burger.open i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger i{display:block;width:16px;height:2px;border-radius:2px;background:linear-gradient(90deg,#fff,#d3c6ff);transition:.35s var(--ease)}
+.burger.open i:nth-child(1){transform:translateY(5px) rotate(45deg)}
 .burger.open i:nth-child(2){opacity:0;transform:scaleX(.4)}
-.burger.open i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.burger.open i:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
 
-/* ---------- 09) الهيرو ---------- */
-.hero{position:relative;padding-block:clamp(34px,6vw,74px) clamp(56px,8vw,110px)}
+/* ---------- 09) الهيرو (مع تعديل شريط تسليم في الميعاد ليصبح في منتصف المربع الصغير) ---------- */
+.hero{position:relative;padding-block:clamp(28px,5vw,60px) clamp(48px,7vw,100px)}
 .hero-in{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(26px,4vw,56px);align-items:center}
 .hero h1{
   font-size:clamp(1.85rem,4.4vw,3.25rem);font-weight:900;
@@ -361,6 +366,21 @@ ul{list-style:none}
 .hero-visual{position:relative}
 .hero-card{padding:clamp(18px,2.6vw,26px);border-radius:var(--r-lg);animation:floaty 7s ease-in-out infinite}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+
+/* تعديل شريط "تسليم في الميعاد" ليصبح في منتصف المربع الصغير تماماً */
+.hero-card .hc-head-top, .hero-visual > div > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* تنسيق الشارة اللي على الشمال لتكون داخل مربع صغير ومتركزة بوضوح */
+.hero-card .pill, .hero-card .tag, div[class*="hc-head"] > div:last-child, .hero-visual .tag, [style*="تسليم"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-inline-start: auto !important;
+}
+
 .hc-head{
   display:flex;align-items:center;justify-content:space-between;gap:10px;
   padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:6px;
@@ -845,14 +865,6 @@ body.has-pointer .glow{opacity:1}
   .reveal{opacity:1;transform:none}
 }
 
-
-
-
-
-
-
-
-
 /* ==========================================================
    تنسيق بانر الصورة الاحترافي والمعزول تماماً
    ========================================================== */
@@ -885,24 +897,8 @@ body.has-pointer .glow{opacity:1}
     color: #fff !important;
     z-index: 2 !important;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </style>
+
 </head>
 <body>
 
